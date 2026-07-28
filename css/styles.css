@@ -310,7 +310,19 @@ a.tool-link:hover { text-decoration: underline; }
 .gig-body { padding: 14px 18px 16px; }
 .gig-venue { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: .02em; color: var(--ink); }
 .gig-line { font-family: var(--font-mono); font-size: 13px; color: var(--muted); letter-spacing: .04em; margin-top: 2px; }
+.gig-address { font-family: var(--font-mono); font-size: 13px; color: var(--muted); letter-spacing: .04em; margin-top: 4px; }
+.gig-directions { color: var(--accent); text-decoration: none; white-space: nowrap; margin-left: 10px; }
+.gig-directions:hover { text-decoration: underline; }
 .gig-notes { font-size: 15px; color: var(--text); margin-top: 8px; }
+
+.gig-map {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--panel-2);
+}
+.gig-map iframe { display: block; width: 100%; height: 220px; border: 0; }
 .tag-next {
   display: inline-block; font-family: var(--font-mono); font-size: 10px;
   letter-spacing: .16em; text-transform: uppercase;
@@ -342,6 +354,8 @@ a.tool-link:hover { text-decoration: underline; }
   display: flex; align-items: center; gap: 18px;
   padding: 10px 20px;
 }
+/* .player-bar's display:flex outranks the UA [hidden] rule, so restate it here. */
+.player-bar[hidden] { display: none; }
 .player-info { display: flex; flex-direction: column; min-width: 0; }
 .player-label {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: .2em;
@@ -361,6 +375,8 @@ a.tool-link:hover { text-decoration: underline; }
   .setlist { flex-direction: column; gap: 14px; }
   .setlist .set { min-width: 0; flex: none; }
   .gig-card { grid-template-columns: 74px 1fr; }
+  /* Narrow cards can't fit the address and the link on one line. */
+  .gig-directions { display: block; margin-left: 0; margin-top: 4px; }
   .player-bar { flex-direction: column; gap: 4px; align-items: stretch; padding: 8px 14px; }
   .player-bar audio { max-width: none; width: 100%; }
 }

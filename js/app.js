@@ -34,12 +34,17 @@
   };
   const FLAT_KEYS = new Set(["F","Bb","Eb","Ab","Db","Gb","Dm","Gm","Cm","Fm","Bbm","Ebm"]);
 
+  // Keys/chords may be authored with the real accidental glyphs (E♭, F♯);
+  // parse in ASCII, display with the glyphs.
+  const ascii = s => (s || "").replace(/♭/g, "b").replace(/♯/g, "#");
+  const pretty = s => (s || "").replace(/([A-G])b/g, "$1♭").replace(/([A-G])#/g, "$1♯");
+
   const CHORD_RE = /^([A-G][#b]?)([^/]*)(\/([A-G][#b]?))?$/;
   const QUALITY_RE = /^(?:maj|min|dim|aug|sus|add|alt|no3|m|M|b|#|\d|\(|\)|\+|°|ø|-)*$/;
 
   function isChordToken(tok) {
     if (!tok) return false;
-    const m = tok.match(CHORD_RE);
+    const m = ascii(tok).match(CHORD_RE);
     if (!m) return false;
     // Reject plain English words that happen to start A–G ("Am7" is a chord; "Baby" is not)
     return QUALITY_RE.test(m[2] || "");
@@ -53,23 +58,25 @@
   }
 
   function transposeChord(chord, offset, useFlats) {
-    const m = chord.match(CHORD_RE);
-    if (!m || offset === 0) return chord;
+    const m = ascii(chord).match(CHORD_RE);
+    if (!m) return chord;
+    // At rest, keep the chart author's enharmonic spelling — only prettify it.
+    if (offset === 0) return pretty(m[0]);
     let out = transposeNote(m[1], offset, useFlats) + (m[2] || "");
     if (m[4]) out += "/" + transposeNote(m[4], offset, useFlats);
-    return out;
+    return pretty(out);
   }
 
   function transposedKey(key, offset) {
     if (!key) return "";
-    const m = key.match(/^([A-G][#b]?)(m?)$/);
+    const m = ascii(key).match(/^([A-G][#b]?)(m?)$/);
     if (!m) return key;
     const useFlats = guessFlats(key, offset);
-    return transposeNote(m[1], offset, useFlats) + m[2];
+    return pretty(transposeNote(m[1], offset, useFlats) + m[2]);
   }
 
   function guessFlats(key, offset) {
-    const m = (key || "").match(/^([A-G][#b]?)(m?)$/);
+    const m = ascii(key).match(/^([A-G][#b]?)(m?)$/);
     if (!m) return false;
     const root = transposeNote(m[1], offset, false);
     const asFlat = transposeNote(m[1], offset, true);
@@ -133,8 +140,8 @@
   }
 
   function transposeLine(text, offset, useFlats) {
-    if (offset === 0) return text;
-    return text.replace(/[A-G][#b]?[a-zA-Z0-9()#b+°ø]*(\/[A-G][#b]?)?/g, tok =>
+    // Runs at offset 0 too: chords still get their accidentals prettified.
+    return text.replace(/[A-G][#b♯♭]?[a-zA-Z0-9()#b♯♭+°ø]*(\/[A-G][#b♯♭]?)?/g, tok =>
       isChordToken(tok) ? transposeChord(tok, offset, useFlats) : tok
     );
   }
@@ -435,7 +442,6 @@
 
     app.innerHTML = `
       <h1 class="page-title">Gigs</h1>
-      <p class="page-sub">Dates, load-in details, and the setlist for each show. Song titles link to their charts.</p>
       <div id="gig-list"></div>
     `;
     const list = document.getElementById("gig-list");
@@ -481,6 +487,17 @@
       </div>`;
     }).join("");
 
+    // The keyless `output=embed` map takes a plain query — prefer the street
+    // address, fall back to the venue name so a gig without one still maps.
+    const mapQuery = g.address || [g.venue, g.city].filter(Boolean).join(", ");
+    const mapSrc = "https://www.google.com/maps?q=" + encodeURIComponent(mapQuery) + "&output=embed";
+    const mapHref = g.mapUrl || "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(mapQuery);
+    const mapHtml = mapQuery ? `
+      <div class="gig-map">
+        <iframe src="${escapeAttr(mapSrc)}" title="Map — ${escapeAttr(g.venue)}"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>` : "";
+
     card.innerHTML = `
       <div class="gig-date">
         <span class="mon">${MONTHS[d.getMonth()]}</span>
@@ -490,7 +507,9 @@
       <div class="gig-body">
         <div class="gig-venue">${escapeHtml(g.venue)}${isNext ? '<span class="tag-next">Next up</span>' : ""}</div>
         <div class="gig-line">${escapeHtml(g.city || "")}${g.time ? " · " + escapeHtml(g.time) : ""}${g.loadIn ? " · Load-in " + escapeHtml(g.loadIn) : ""}</div>
+        ${g.address ? `<div class="gig-address">${escapeHtml(g.address)}<a class="gig-directions" href="${escapeAttr(mapHref)}" target="_blank" rel="noopener noreferrer">Directions ↗</a></div>` : ""}
         ${g.notes ? `<div class="gig-notes">${escapeHtml(g.notes)}</div>` : ""}
+        ${mapHtml}
         ${setsHtml ? `<div class="setlist">${setsHtml}</div>` : ""}
       </div>
     `;
