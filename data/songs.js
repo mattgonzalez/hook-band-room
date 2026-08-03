@@ -239,7 +239,7 @@ window.SONGS = [
     id: "rikki-dont-lose-that-number",
     title: "Rikki Don't Lose That Number",
     artist: "Steely Dan",
-    key: "Dm",
+    key: "Em",
     audio: null
   },
   {
@@ -261,6 +261,13 @@ window.SONGS = [
     title: "Don't Stop Me Now",
     artist: "Queen",
     key: "D",
+    audio: null
+  },
+  {
+    id: "colors",
+    title: "Colors",
+    artist: "Black Pumas",
+    key: "Em",
     audio: null
   }
 ];

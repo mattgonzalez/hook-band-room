@@ -31,50 +31,49 @@ window.GIGS = [
       {
         name: "Set 1",
         songs: [
-          "goin-down",
-          "down-under",
-          "mrs-robinson",
           "crazy-little-thing",
+          "down-under",
           "blackbird",
-          "fire-and-rain",
-          "killing-me-softly",
-          "moondance",
-          "i-still-havent-found",
           "wagon-wheel",
-          "hook",
-          "just-what-i-needed"
+          "fire-and-rain",
+          "aint-no-sunshine",
+          "make-you-feel-my-love",
+          "i-still-havent-found",
+          "hello",
+          "hook"
         ]
       },
       {
         name: "Set 2",
         songs: [
-          "i-gotta-feeling",
+          "goin-down",
           "keep-your-hands-to-yourself",
-          "crazy",
-          "be-my-girl",
-          "eleanor-rigby",
-          "aint-no-sunshine",
-          "hello",
-          "lights",
-          "lovin-touchin-squeezin",
+          "mrs-robinson",
+          "colors",
           "two-tickets-to-paradise",
-          "i-will-survive",
-          "come-together"
+          "rikki-dont-lose-that-number",
+          "lights",
+          "eleanor-rigby",
+          "lovin-touchin-squeezin",
+          "free-fallin",
+          "come-together",
+          "just-what-i-needed"
         ]
       },
       {
         name: "Set 3",
         songs: [
+          "i-gotta-feeling",
+          "killing-me-softly",
+          "crazy",
+          "be-my-girl",
+          "i-will-survive",
           "you-wreck-me",
           "sexyback",
-          "make-you-feel-my-love",
-          "free-fallin",
           "sultans-of-swing",
           "get-lucky",
-          "rikki-dont-lose-that-number",
           "tennessee-whiskey",
-          "valerie",
-          "dont-stop-me-now"
+          "valerie"
         ]
       }
     ]
