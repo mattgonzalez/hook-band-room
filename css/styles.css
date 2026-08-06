@@ -314,6 +314,7 @@ a.tool-link:hover { text-decoration: underline; }
 .gig-directions { color: var(--accent); text-decoration: none; white-space: nowrap; margin-left: 10px; }
 .gig-directions:hover { text-decoration: underline; }
 .gig-notes { font-size: 15px; color: var(--text); margin-top: 8px; }
+.gig-download-btn { display: block; margin-top: 12px; }
 
 .gig-map {
   margin-top: 12px;

@@ -69,7 +69,6 @@ window.GIGS = [
           "be-my-girl",
           "i-will-survive",
           "you-wreck-me",
-          "sexyback",
           "sultans-of-swing",
           "get-lucky",
           "tennessee-whiskey",

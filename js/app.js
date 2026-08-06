@@ -469,11 +469,27 @@
     return h;
   }
 
+  function gigChartSongs(g) {
+    const seen = new Set();
+    const out = [];
+    (g.sets || []).forEach(set => {
+      (set.songs || []).forEach(sid => {
+        const s = SONGS.find(x => x.id === sid);
+        if (s && s.chartPdf && !seen.has(s.id)) {
+          seen.add(s.id);
+          out.push(s);
+        }
+      });
+    });
+    return out;
+  }
+
   function gigCard(g, isNext, isPast) {
     const card = document.createElement("article");
     card.className = "gig-card" + (isPast ? " past" : "");
     const d = g._d;
     const sets = g.sets || [];
+    const chartSongs = gigChartSongs(g);
     const setsHtml = sets.map((set, idx) => {
       const items = set.songs.map(sid => {
         const s = SONGS.find(x => x.id === sid);
@@ -510,10 +526,87 @@
         ${g.address ? `<div class="gig-address">${escapeHtml(g.address)}<a class="gig-directions" href="${escapeAttr(mapHref)}" target="_blank" rel="noopener noreferrer">Directions ↗</a></div>` : ""}
         ${g.notes ? `<div class="gig-notes">${escapeHtml(g.notes)}</div>` : ""}
         ${mapHtml}
+        ${chartSongs.length ? `<button type="button" class="tool-btn gig-download-btn">Download charts (PDF) — ${chartSongs.length}</button>` : ""}
         ${setsHtml ? `<div class="setlist">${setsHtml}</div>` : ""}
       </div>
     `;
+    if (chartSongs.length) {
+      const btn = card.querySelector(".gig-download-btn");
+      btn.addEventListener("click", () => downloadGigCharts(g, chartSongs, btn));
+    }
     return card;
+  }
+
+  /* ---------------- Bulk PDF download (zips a gig's chart PDFs client-side) ---------------- */
+
+  let jszipLoadPromise = null;
+  function ensureJSZip() {
+    if (window.JSZip) return Promise.resolve();
+    if (jszipLoadPromise) return jszipLoadPromise;
+    jszipLoadPromise = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
+      script.integrity = "sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==";
+      script.crossOrigin = "anonymous";
+      script.referrerPolicy = "no-referrer";
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error("Couldn't load the zip library — check your connection."));
+      document.head.appendChild(script);
+    });
+    return jszipLoadPromise;
+  }
+
+  function pdfFilename(song) {
+    const base = song.chartPdf.split("/").pop();
+    return base || (song.title + ".pdf");
+  }
+
+  function gigZipFilename(g) {
+    const venue = (g.venue || "charts").replace(/[^\w\- ]+/g, "").trim().replace(/\s+/g, "-");
+    return `${g.date || "gig"}-${venue}-charts.zip`;
+  }
+
+  async function downloadGigCharts(g, chartSongs, btn) {
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Zipping…";
+    try {
+      await ensureJSZip();
+      const zip = new window.JSZip();
+      const used = new Set();
+      const failed = [];
+      for (const song of chartSongs) {
+        try {
+          const res = await fetch(song.chartPdf);
+          if (!res.ok) throw new Error(String(res.status));
+          const blob = await res.blob();
+          let name = pdfFilename(song);
+          if (used.has(name)) name = song.id + ".pdf";
+          used.add(name);
+          zip.file(name, blob);
+        } catch (err) {
+          failed.push(song.title);
+        }
+      }
+      if (used.size === 0) throw new Error("No charts could be downloaded.");
+
+      const content = await zip.generateAsync({ type: "blob" });
+      const url = URL.createObjectURL(content);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = gigZipFilename(g);
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+
+      btn.textContent = failed.length ? `Downloaded (${failed.length} failed)` : "Downloaded ✓";
+    } catch (err) {
+      console.error(err);
+      btn.textContent = "Download failed";
+    } finally {
+      setTimeout(() => { btn.disabled = false; btn.textContent = originalText; }, 3000);
+    }
   }
 
   /* ---------------- Utils ---------------- */

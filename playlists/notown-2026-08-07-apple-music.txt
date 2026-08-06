@@ -1,0 +1,41 @@
+Apple Music import list — NoTown Tavern, 2026-08-07
+Search each line ("Title Artist") in Apple Music and add to the matching set playlist.
+
+SET 1
+Crazy Little Thing Called Love Queen
+Down Under Men At Work
+Blackbird The Beatles
+Wagon Wheel Darius Rucker
+Fire and Rain James Taylor
+Ain't No Sunshine Bill Withers
+Make You Feel My Love Adele
+I Still Haven't Found What I'm Looking For U2
+Hello Adele
+Hook Blues Traveler
+
+SET 2
+Goin' Down Freddie King
+Keep Your Hands to Yourself The Georgia Satellites
+Mrs. Robinson The Lemonheads
+Colors Black Pumas
+Two Tickets to Paradise Eddie Money
+Rikki Don't Lose That Number Steely Dan
+Lights Journey
+Eleanor Rigby The Beatles
+Lovin' Touchin' Squeezin' Journey
+Free Fallin' Tom Petty
+Come Together The Beatles
+Just What I Needed The Cars
+
+SET 3
+I Gotta Feeling Black Eyed Peas
+Killing Me Softly With His Song Fugees
+Crazy Gnarls Barkley
+Are You Gonna Be My Girl Jet
+I Will Survive Cake
+You Wreck Me Tom Petty
+SexyBack Justin Timberlake
+Sultans of Swing Dire Straits
+Get Lucky Daft Punk (note: band plays the Martin Miller cover version, not on streaming)
+Tennessee Whiskey Chris Stapleton
+Valerie Amy Winehouse

@@ -32,7 +32,8 @@ window.SONGS = [
     title: "Mrs. Robinson",
     artist: "Lemonheads",
     key: "E & G",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/Mrs-Robinson.pdf"
   },
   {
     id: "crazy-little-thing",
@@ -47,14 +48,16 @@ window.SONGS = [
     title: "Blackbird",
     artist: "Beatles",
     key: "G",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/blackbird-beatles-chart.pdf"
   },
   {
     id: "fire-and-rain",
     title: "Fire and Rain",
     artist: "James Taylor",
     key: "C",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/Fire and Rain.pdf"
   },
   {
     id: "killing-me-softly",
@@ -82,7 +85,8 @@ window.SONGS = [
     title: "Wagon Wheel",
     artist: "Darius Rucker",
     key: "G",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/wagon-wheel-old-crow-medicine-show-chart.pdf"
   },
   {
     id: "hook",
@@ -97,14 +101,16 @@ window.SONGS = [
     title: "Two Tickets to Paradise",
     artist: "Eddie Money",
     key: "A",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/two-tickets-to-paradise-eddie-money-chart.pdf"
   },
   {
     id: "just-what-i-needed",
     title: "Just What I Needed",
     artist: "The Cars",
     key: "E",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/just what i needed official.pdf"
   },
 
   /* --- Set 2 --- */
@@ -143,14 +149,16 @@ window.SONGS = [
     title: "Be My Girl",
     artist: "Jet",
     key: "E",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/be-my-girl.pdf"
   },
   {
     id: "eleanor-rigby",
     title: "Eleanor Rigby",
     artist: "Beatles",
     key: "Em",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/eleanor-rigby-beatles-chart.pdf"
   },
   {
     id: "aint-no-sunshine",
@@ -165,21 +173,24 @@ window.SONGS = [
     title: "Hello",
     artist: "Adele",
     key: "G",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/hello-adele-chart.pdf"
   },
   {
     id: "lights",
     title: "Lights",
     artist: "Journey",
     key: "D",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/lights-journey-chart.pdf"
   },
   {
     id: "lovin-touchin-squeezin",
     title: "Lovin' Touchin' Squeezin'",
     artist: "Journey",
     key: "E",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/lovin-touchin-squeezin-journey-chart.pdf"
   },
   {
     id: "i-will-survive",
@@ -195,7 +206,8 @@ window.SONGS = [
     title: "Come Together",
     artist: "Beatles",
     key: "Dm",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/come-together-beatles-chart.pdf"
   },
 
   /* --- Set 3 --- */
@@ -219,7 +231,8 @@ window.SONGS = [
     id: "make-you-feel-my-love",
     title: "Make You Feel My Love",
     key: "G",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/Make You Feel My Love.pdf"
   },
   {
     id: "free-fallin",
@@ -233,7 +246,8 @@ window.SONGS = [
     title: "Sultans of Swing",
     artist: "Dire Straits",
     key: "Dm",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/sultans of swing official.pdf"
   },
   {
     id: "get-lucky",
@@ -249,7 +263,8 @@ window.SONGS = [
     title: "Rikki Don't Lose That Number",
     artist: "Steely Dan",
     key: "Em",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/Rikki Don't Lose That Number.pdf"
   },
   {
     id: "tennessee-whiskey",
@@ -266,18 +281,12 @@ window.SONGS = [
     audio: null
   },
   {
-    id: "dont-stop-me-now",
-    title: "Don't Stop Me Now",
-    artist: "Queen",
-    key: "D",
-    audio: null
-  },
-  {
     id: "colors",
     title: "Colors",
     artist: "Black Pumas",
     key: "Em",
-    audio: null
+    audio: null,
+    chartPdf: "charts-pdf/colors-black-pumas-chart.pdf"
   },
 
   /* --- Imported charts, not yet assigned to a set ---
