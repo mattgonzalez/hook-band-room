@@ -172,7 +172,7 @@ window.SONGS = [
     id: "hello",
     title: "Hello",
     artist: "Adele",
-    key: "G",
+    key: "Em",
     audio: null,
     chartPdf: "charts-pdf/hello-adele-chart.pdf"
   },
@@ -264,7 +264,7 @@ window.SONGS = [
     artist: "Steely Dan",
     key: "Em",
     audio: null,
-    chartPdf: "charts-pdf/Rikki Don't Lose That Number.pdf"
+    chartPdf: "charts-pdf/rikki-steely-dan-chart.pdf"
   },
   {
     id: "tennessee-whiskey",

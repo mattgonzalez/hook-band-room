@@ -338,14 +338,14 @@
     const chartEl = document.getElementById("chart");
     const drawChart = () => {
       chartEl.innerHTML = "";
+      document.getElementById("tr-val").textContent = (transpose > 0 ? "+" : "") + transpose;
+      document.getElementById("key-display").textContent = transposedKey(song.key, transpose) || "?";
       if (!chart.trim()) {
         if (song.chartPdf) { chartEl.style.display = "none"; return; }
         chartEl.innerHTML = `<div class="comment">No chart yet — add one in data/charts.js under "${escapeHtml(song.id)}".</div>`;
         return;
       }
       chartEl.appendChild(renderChart(chart, transpose, song.key));
-      document.getElementById("tr-val").textContent = (transpose > 0 ? "+" : "") + transpose;
-      document.getElementById("key-display").textContent = transposedKey(song.key, transpose) || "?";
     };
     drawChart();
 
