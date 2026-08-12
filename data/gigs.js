@@ -79,7 +79,7 @@ window.GIGS = [
   },
     {
     date: "2026-08-12",
-    venue: "Figueroa Mountain Brewing Co,",
+    venue: "Figueroa Mountain Brewing Co.",
     city: "Santa Barbara, CA",
     address: "137 Anacapa St F, Santa Barbara, CA 93101",
     mapUrl: "https://maps.app.goo.gl/YNJi3TJUVsVhNXrv8",
