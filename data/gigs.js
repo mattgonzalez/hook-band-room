@@ -76,5 +76,64 @@ window.GIGS = [
         ]
       }
     ]
+  },
+    {
+    date: "2026-08-12",
+    venue: "Figueroa Mountain Brewing Co,",
+    city: "Santa Barbara, CA",
+    address: "137 Anacapa St F, Santa Barbara, CA 93101",
+    mapUrl: "https://maps.app.goo.gl/YNJi3TJUVsVhNXrv8",
+    time: "7-10 PM",
+    loadIn: "Sound system setup at 4 PM",
+    notes: "",
+    sets: [
+      {
+        name: "Set 1",
+        songs: [
+          "crazy-little-thing",
+          "down-under",
+          "blackbird",
+          "wagon-wheel",
+          "fire-and-rain",
+          "aint-no-sunshine",
+          "make-you-feel-my-love",
+          "i-still-havent-found",
+          "hello",
+          "hook"
+        ]
+      },
+      {
+        name: "Set 2",
+        songs: [
+          "goin-down",
+          "keep-your-hands-to-yourself",
+          "mrs-robinson",
+          "colors",
+          "two-tickets-to-paradise",
+          "rikki-dont-lose-that-number",
+          "lights",
+          "eleanor-rigby",
+          "lovin-touchin-squeezin",
+          "free-fallin",
+          "come-together",
+          "just-what-i-needed"
+        ]
+      },
+      {
+        name: "Set 3",
+        songs: [
+          "i-gotta-feeling",
+          "killing-me-softly",
+          "crazy",
+          "be-my-girl",
+          "i-will-survive",
+          "you-wreck-me",
+          "sultans-of-swing",
+          "get-lucky",
+          "tennessee-whiskey",
+          "valerie"
+        ]
+      }
+    ]
   }
 ];
