@@ -84,7 +84,7 @@ window.GIGS = [
     address: "137 Anacapa St F, Santa Barbara, CA 93101",
     mapUrl: "https://maps.app.goo.gl/YNJi3TJUVsVhNXrv8",
     time: "7-10 PM",
-    loadIn: "Sound system setup at 4 PM",
+    loadIn: "Sound system setup at 4 PM, soundcheck at 630",
     notes: "",
     sets: [
       {
@@ -194,5 +194,14 @@ window.GIGS = [
         ]
       }
     ]
+  },
+  {
+    date: "2026-09-19",
+    venue: "Corktree Cellars",
+    city: "Carpinteria, CA",
+    address: "910 Linden Ave, Carpinteria, CA 93013",
+    mapUrl: "https://www.google.com/maps/place/Corktree+Cellars,+Carpinteria+CA/data=!4m2!3m1!1s0x80e90ed125842fe1:0x7ffcb13be62bb983",
+    time: "8-11 PM",
+    sets: []
   }
 ];
