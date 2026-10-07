@@ -223,11 +223,6 @@ a:hover { text-decoration: underline; }
   background: var(--panel); border: 1px solid var(--line-2);
   border-radius: 8px 8px 0 0; padding: 8px 10px;
 }
-.tool-group { display: flex; align-items: center; gap: 6px; }
-.tool-label {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--muted);
-}
 .tool-btn {
   background: var(--panel-2); color: var(--text);
   border: 1px solid var(--line-2); border-radius: 5px;
@@ -247,11 +242,6 @@ a.tool-link:hover { text-decoration: underline; }
   background: var(--paper);
 }
 .chart-pdf object { display: block; width: 100%; height: 78vh; }
-.tool-value {
-  font-family: var(--font-mono); font-size: 13px; font-weight: 700;
-  color: var(--accent); min-width: 34px; text-align: center;
-}
-.tool-spacer { flex: 1; }
 
 /* The signature: chart as a paper sheet */
 .chart-sheet {
@@ -259,13 +249,17 @@ a.tool-link:hover { text-decoration: underline; }
   background-image: linear-gradient(180deg, rgba(255,255,255,.5), transparent 120px);
   color: var(--ink);
   border: 1px solid var(--paper-edge);
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
   box-shadow: 0 6px 18px rgba(0,0,0,.12);
   padding: 30px 34px 44px;
   font-family: var(--font-mono);
   font-size: var(--chart-size);
   line-height: 1.4;
   overflow-x: auto;
+}
+.chart-toolbar + .chart-sheet,
+.chart-pdf + .chart-sheet {
+  border-radius: 0 0 8px 8px;
 }
 .chart-sheet .section {
   font-family: var(--font-body); font-weight: 700; font-size: .85em;

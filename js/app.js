@@ -18,13 +18,10 @@
   const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const DOWS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-  let transpose = 0;
-  let scrollTimer = null;
-
   document.getElementById("song-count").textContent =
     SONGS.length + " songs in the book";
 
-  /* ---------------- Chords & transposition ---------------- */
+  /* ---------------- Chords ---------------- */
 
   const SHARPS = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
   const FLATS  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
@@ -50,36 +47,32 @@
     return QUALITY_RE.test(m[2] || "");
   }
 
-  function transposeNote(note, offset, useFlats) {
+  function transposeNote(note, useFlats) {
     const idx = NOTE_INDEX[note];
     if (idx === undefined) return note;
-    const n = ((idx + offset) % 12 + 12) % 12;
-    return useFlats ? FLATS[n] : SHARPS[n];
+    return useFlats ? FLATS[idx] : SHARPS[idx];
   }
 
-  function transposeChord(chord, offset, useFlats) {
+  function prettifyChord(chord) {
     const m = ascii(chord).match(CHORD_RE);
     if (!m) return chord;
-    // At rest, keep the chart author's enharmonic spelling — only prettify it.
-    if (offset === 0) return pretty(m[0]);
-    let out = transposeNote(m[1], offset, useFlats) + (m[2] || "");
-    if (m[4]) out += "/" + transposeNote(m[4], offset, useFlats);
-    return pretty(out);
+    // Keep the chart author's enharmonic spelling — only prettify it.
+    return pretty(m[0]);
   }
 
-  function transposedKey(key, offset) {
+  function prettifyKey(key) {
     if (!key) return "";
     const m = ascii(key).match(/^([A-G][#b]?)(m?)$/);
     if (!m) return key;
-    const useFlats = guessFlats(key, offset);
-    return pretty(transposeNote(m[1], offset, useFlats) + m[2]);
+    const useFlats = guessFlats(key);
+    return pretty(transposeNote(m[1], useFlats) + m[2]);
   }
 
-  function guessFlats(key, offset) {
+  function guessFlats(key) {
     const m = ascii(key).match(/^([A-G][#b]?)(m?)$/);
     if (!m) return false;
-    const root = transposeNote(m[1], offset, false);
-    const asFlat = transposeNote(m[1], offset, true);
+    const root = transposeNote(m[1], false);
+    const asFlat = transposeNote(m[1], true);
     return FLAT_KEYS.has(asFlat + m[2]) && asFlat !== root ? true : FLAT_KEYS.has(root + m[2]);
   }
 
@@ -139,15 +132,13 @@
     return { type: "pair", chords: chordLine.replace(/\s+$/, ""), lyric: lyricLine };
   }
 
-  function transposeLine(text, offset, useFlats) {
-    // Runs at offset 0 too: chords still get their accidentals prettified.
+  function prettifyLine(text) {
     return text.replace(/[A-G][#b♯♭]?[a-zA-Z0-9()#b♯♭+°ø]*(\/[A-G][#b♯♭]?)?/g, tok =>
-      isChordToken(tok) ? transposeChord(tok, offset, useFlats) : tok
+      isChordToken(tok) ? prettifyChord(tok) : tok
     );
   }
 
-  function renderChart(text, offset, key) {
-    const useFlats = guessFlats(key, offset);
+  function renderChart(text) {
     const parsed = parseChart(text);
     const frag = document.createDocumentFragment();
     for (const ln of parsed) {
@@ -160,11 +151,11 @@
         case "comment":
           el = div("comment"); el.textContent = ln.text; break;
         case "chords":
-          el = div("chords"); el.textContent = transposeLine(ln.text, offset, useFlats); break;
+          el = div("chords"); el.textContent = prettifyLine(ln.text); break;
         case "pair":
           el = document.createDocumentFragment();
           if (ln.chords.trim()) {
-            const c = div("chords"); c.textContent = transposeLine(ln.chords, offset, useFlats); el.appendChild(c);
+            const c = div("chords"); c.textContent = prettifyLine(ln.chords); el.appendChild(c);
           }
           if (ln.lyric.trim()) {
             const l = div("lyric"); l.textContent = ln.lyric; el.appendChild(l);
@@ -196,7 +187,6 @@
   route();
 
   function route() {
-    stopAutoScroll();
     const hash = location.hash || "#/songs";
     const parts = hash.replace(/^#\//, "").split("/");
     setActiveTab(parts[0] === "gigs" ? "gigs" : "songs");
@@ -287,8 +277,6 @@
   function renderSong(id) {
     const song = SONGS.find(s => s.id === id);
     if (!song) { app.innerHTML = `<p class="empty-note">Song not found. <a href="#/songs">Back to the songbook</a>.</p>`; hidePlayer(); return; }
-    transpose = 0;
-
     const chart = CHARTS[song.id] || "";
 
     app.innerHTML = `
@@ -298,33 +286,16 @@
       </div>
       <p class="song-meta">
         ${song.artist ? escapeHtml(song.artist) + " &middot; " : ""}
-        Key <strong id="key-display">${escapeHtml(song.key || "?")}</strong>
+        Key <strong>${escapeHtml(prettifyKey(song.key) || "?")}</strong>
         ${song.capo ? " &middot; Capo " + escapeHtml(String(song.capo)) : ""}
         ${song.tempo ? " &middot; " + escapeHtml(String(song.tempo)) + " bpm" : ""}
         ${song.notes ? " &middot; " + escapeHtml(song.notes) : ""}
       </p>
 
+      ${song.chordsheet ? `
       <div class="chart-toolbar" role="toolbar" aria-label="Chart tools">
-        <div class="tool-group">
-          <span class="tool-label">Transpose</span>
-          <button class="tool-btn" id="tr-down" aria-label="Transpose down">&minus;</button>
-          <span class="tool-value" id="tr-val" aria-live="polite" aria-label="Transpose amount">0</span>
-          <button class="tool-btn" id="tr-up" aria-label="Transpose up">+</button>
-          <button class="tool-btn" id="tr-reset">Reset</button>
-        </div>
-        <div class="tool-group">
-          <span class="tool-label">Size</span>
-          <button class="tool-btn" id="sz-down" aria-label="Smaller text">A&minus;</button>
-          <button class="tool-btn" id="sz-up" aria-label="Larger text">A+</button>
-        </div>
-        <span class="tool-spacer"></span>
-        ${song.chordsheet ? `<a class="tool-btn tool-link" href="${escapeAttr(song.chordsheet)}" target="_blank" rel="noopener">Chordsheet &#8599;</a>` : ""}
-        <div class="tool-group">
-          <button class="tool-btn" id="autoscroll" aria-pressed="false">Auto-scroll</button>
-          <button class="tool-btn" id="scroll-slower" aria-label="Auto-scroll slower">&#9660;</button>
-          <button class="tool-btn" id="scroll-faster" aria-label="Auto-scroll faster">&#9650;</button>
-        </div>
-      </div>
+        <a class="tool-btn tool-link" href="${escapeAttr(song.chordsheet)}" target="_blank" rel="noopener">Chordsheet &#8599;</a>
+      </div>` : ""}
       ${song.chartPdf ? `
       <div class="chart-pdf">
         <object data="${escapeAttr(song.chartPdf)}" type="application/pdf" aria-label="Chord sheet PDF">
@@ -336,51 +307,16 @@
     `;
 
     const chartEl = document.getElementById("chart");
-    const drawChart = () => {
-      chartEl.innerHTML = "";
-      document.getElementById("tr-val").textContent = (transpose > 0 ? "+" : "") + transpose;
-      document.getElementById("key-display").textContent = transposedKey(song.key, transpose) || "?";
-      if (!chart.trim()) {
-        if (song.chartPdf) { chartEl.style.display = "none"; return; }
-        chartEl.innerHTML = `<div class="comment">No chart yet — add one in data/charts.js under "${escapeHtml(song.id)}".</div>`;
-        return;
-      }
-      chartEl.appendChild(renderChart(chart, transpose, song.key));
-    };
-    drawChart();
-
-    document.getElementById("tr-up").onclick = () => { transpose = Math.min(11, transpose + 1); drawChart(); };
-    document.getElementById("tr-down").onclick = () => { transpose = Math.max(-11, transpose - 1); drawChart(); };
-    document.getElementById("tr-reset").onclick = () => { transpose = 0; drawChart(); };
-
-    document.getElementById("sz-up").onclick = () => bumpChartSize(1);
-    document.getElementById("sz-down").onclick = () => bumpChartSize(-1);
-
-    let speed = 0.6; // px per tick
-    const asBtn = document.getElementById("autoscroll");
-    asBtn.onclick = () => {
-      if (scrollTimer) { stopAutoScroll(); asBtn.setAttribute("aria-pressed", "false"); }
-      else {
-        asBtn.setAttribute("aria-pressed", "true");
-        scrollTimer = setInterval(() => window.scrollBy(0, speed), 30);
-      }
-    };
-    document.getElementById("scroll-faster").onclick = () => { speed = Math.min(4, speed + 0.3); };
-    document.getElementById("scroll-slower").onclick = () => { speed = Math.max(0.15, speed - 0.3); };
+    if (!chart.trim()) {
+      if (song.chartPdf) { chartEl.style.display = "none"; }
+      else chartEl.innerHTML = `<div class="comment">No chart yet — add one in data/charts.js under "${escapeHtml(song.id)}".</div>`;
+    } else {
+      chartEl.appendChild(renderChart(chart));
+    }
 
     // Player
     if (song.audio) showPlayer(song);
     else hidePlayer();
-  }
-
-  function bumpChartSize(dir) {
-    const cur = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--chart-size"));
-    const next = Math.min(24, Math.max(10, cur + dir));
-    document.documentElement.style.setProperty("--chart-size", next + "px");
-  }
-
-  function stopAutoScroll() {
-    if (scrollTimer) { clearInterval(scrollTimer); scrollTimer = null; }
   }
 
   /* ---------------- Player ---------------- */
