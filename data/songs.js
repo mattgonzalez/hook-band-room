@@ -19,6 +19,14 @@
      notes:  anything useful ("two-chorus solo", "ends cold", ...)
    ============================================================ */
 window.SONGS = [
+  {
+ id: "fly-like-an-eagle",
+ title: "Fly Like An Eagle",
+ artist: "Steve Miller Band",
+ key: "Am",
+ audio: "Fly Like an Eagle (guide track).m4a",
+ chartPdf: "charts-pdf/fly-like-an-eagle-steve-miller-band-chart.pdf"
+  },
   /* --- Set 1 --- */
   {
     id: "goin-down",
