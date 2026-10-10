@@ -9,6 +9,7 @@
   const playerBar = document.getElementById("player-bar");
   const playerAudio = document.getElementById("player-audio");
   const playerTitle = document.getElementById("player-title");
+  const playerTrack = document.getElementById("player-track");
 
   const SONGS = window.SONGS || [];
   const CHARTS = window.CHARTS || {};
@@ -17,6 +18,11 @@
 
   const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const DOWS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  // Recording fields on a song, in player dropdown order.
+  const TRACKS = [
+    { field: "original", label: "Original" },
+    { field: "practice", label: "Practice" }
+  ];
 
   document.getElementById("song-count").textContent =
     SONGS.length + " songs in the book";
@@ -236,7 +242,7 @@
         </span>
         <span class="song-tempo">${s.tempo ? escapeHtml(String(s.tempo)) + " bpm" : ""}</span>
         <span class="badge-key">${escapeHtml(s.key || "—")}</span>
-        <span class="audio-dot ${s.audio ? "has" : ""}" aria-hidden="true"></span><span class="sr-only">${s.audio ? "Recording available" : "No recording yet"}</span>
+        <span class="audio-dot ${hasAudio(s) ? "has" : ""}" aria-hidden="true"></span><span class="sr-only">${hasAudio(s) ? "Recording available" : "No recording yet"}</span>
       `;
       list.appendChild(a);
     }
@@ -265,7 +271,7 @@
           </span>
           <span class="song-tempo">${s.tempo ? escapeHtml(String(s.tempo)) + " bpm" : ""}</span>
           <span class="badge-key">${escapeHtml(s.key || "—")}</span>
-          <span class="audio-dot ${s.audio ? "has" : ""}" aria-hidden="true"></span><span class="sr-only">${s.audio ? "Recording available" : "No recording yet"}</span>
+          <span class="audio-dot ${hasAudio(s) ? "has" : ""}" aria-hidden="true"></span><span class="sr-only">${hasAudio(s) ? "Recording available" : "No recording yet"}</span>
         `;
         list.appendChild(a);
       }
@@ -315,24 +321,46 @@
     }
 
     // Player
-    if (song.audio) showPlayer(song);
+    if (hasAudio(song)) showPlayer(song);
     else hidePlayer();
   }
 
   /* ---------------- Player ---------------- */
 
+  function hasAudio(song) {
+    return TRACKS.some(t => song[t.field]);
+  }
+
   function showPlayer(song) {
-    playerTitle.textContent = song.title + (song.artist ? " — " + song.artist : "");
-    playerAudio.src = song.audio;
+    const tracks = TRACKS.filter(t => song[t.field]);
+    // List every track type; ones this song lacks are shown but disabled.
+    playerTrack.innerHTML = TRACKS
+      .map(t => song[t.field]
+        ? `<option value="${escapeAttr(t.field)}">${escapeHtml(t.label)}</option>`
+        : `<option value="${escapeAttr(t.field)}" disabled>${escapeHtml(t.label)} (none yet)</option>`)
+      .join("");
+    playerTrack.onchange = () => selectTrack(song, tracks.find(t => t.field === playerTrack.value));
     playerBar.hidden = false;
+    // Default to the practice track when there is one.
+    selectTrack(song, tracks.find(t => t.field === "practice") || tracks[0]);
+  }
+  function selectTrack(song, track) {
+    const src = song[track.field];
+    playerTrack.value = track.field;
+    const label = song.title + (song.artist ? " — " + song.artist : "");
+    playerTitle.textContent = label;
+    const wasPlaying = !playerAudio.paused;
     playerAudio.onerror = () => {
-      playerTitle.textContent = song.title + " — recording file not found (" + song.audio + ")";
+      playerTitle.textContent = label + " — " + track.label.toLowerCase() + " file not found (" + src + ")";
     };
+    playerAudio.src = src;
+    if (wasPlaying) playerAudio.play().catch(() => {});
   }
   function hidePlayer() {
     playerBar.hidden = true;
     playerAudio.pause();
     playerAudio.removeAttribute("src");
+    playerTrack.innerHTML = "";
   }
 
   /* ---------------- Gigs ---------------- */

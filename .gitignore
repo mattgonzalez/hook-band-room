@@ -1,2 +1,5 @@
 .DS_Store
 
+
+# DAW projects and stems — publish bounced .m4a/.mp3 files only
+*.logicx

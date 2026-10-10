@@ -357,6 +357,15 @@ a.tool-link:hover { text-decoration: underline; }
   text-transform: uppercase; color: var(--accent); font-weight: 600;
 }
 .player-title { font-weight: 600; font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.player-track {
+  flex-shrink: 0;
+  background: var(--panel-2); color: var(--ink);
+  border: 1px solid var(--line-2); border-radius: 5px;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  padding: 6px 8px; min-height: 34px; cursor: pointer;
+}
+.player-track:hover, .player-track:focus { border-color: var(--accent); }
 .player-bar audio { flex: 1; max-width: 620px; height: 38px; }
 
 /* ---------- Responsive ---------- */
@@ -373,5 +382,5 @@ a.tool-link:hover { text-decoration: underline; }
   /* Narrow cards can't fit the address and the link on one line. */
   .gig-directions { display: block; margin-left: 0; margin-top: 4px; }
   .player-bar { flex-direction: column; gap: 4px; align-items: stretch; padding: 8px 14px; }
-  .player-bar audio { max-width: none; width: 100%; }
+  .player-bar audio { flex: none; max-width: none; width: 100%; }
 }

@@ -8,8 +8,11 @@
      key:    the key THE BAND plays it in, e.g. "Am", "G", "Bb"
      tempo:  bpm (optional)
      capo:   fret number (optional)
-     audio:  path to a practice recording in /audio, or a full URL
-             to Dropbox/Drive/etc. Leave null if none yet.
+     original: the original/reference recording — path in /audio,
+             or a full URL to Dropbox/Drive/etc. (optional)
+     practice: the band's practice/guide track — same format.
+             Leave null if none yet. The player bar's Original /
+             Practice dropdown greys out whichever one is missing.
      chordsheet: public URL of the song's sheet on chordsheet.com
              (unlock it there via Sharing → Public URL). Adds an
              "Open on Chordsheet ↗" button to the chart toolbar.
@@ -24,7 +27,8 @@ window.SONGS = [
  title: "Fly Like An Eagle",
  artist: "Steve Miller Band",
  key: "Am",
- audio: "Fly Like an Eagle (guide track).m4a",
+ original: "audio/Fly Like an Eagle (Playing For Change).m4a",
+ practice: "audio/Fly Like an Eagle (guide track).m4a",
  chartPdf: "charts-pdf/fly-like-an-eagle-steve-miller-band-chart.pdf"
   },
   /* --- Set 1 --- */
@@ -33,14 +37,15 @@ window.SONGS = [
     title: "Goin' Down",
     artist: "Freddie King",
     key: "D",
-    audio: null
+    original: "audio/Going Down (vox+guitar+bass+drums).m4a",
+    practice: "audio/Going Down (practice track).m4a"
   },
   {
     id: "mrs-robinson",
     title: "Mrs. Robinson",
     artist: "Lemonheads",
     key: "E & G",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Mrs-Robinson.pdf"
   },
   {
@@ -48,7 +53,8 @@ window.SONGS = [
     title: "Crazy Little Thing Called Love",
     artist: "Queen",
     key: "D",
-    audio: null,
+    original: "audio/Crazy Little Thing Called Love.m4a",
+    practice: "audio/Crazy Little Thing Called Love (practice track).m4a",
     chartPdf: "charts-pdf/Crazy Little Thing Called Love (Queen).pdf"
   },
   {
@@ -56,7 +62,7 @@ window.SONGS = [
     title: "Blackbird",
     artist: "Beatles",
     key: "G",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/blackbird-beatles-chart.pdf"
   },
   {
@@ -64,7 +70,7 @@ window.SONGS = [
     title: "Fire and Rain",
     artist: "James Taylor",
     key: "C",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Fire and Rain.pdf"
   },
   {
@@ -72,28 +78,28 @@ window.SONGS = [
     title: "Killing Me Softly",
     artist: "Fugees",
     key: "Em",
-    audio: null
+    practice: null
   },
   {
     id: "moondance",
     title: "Moondance",
     artist: "Van Morrison",
     key: "Am",
-    audio: null
+    practice: null
   },
   {
     id: "i-still-havent-found",
     title: "I Still Haven't Found What I'm Looking For",
     artist: "U2",
     key: "A",
-    audio: null
+    practice: null
   },
   {
     id: "wagon-wheel",
     title: "Wagon Wheel",
     artist: "Darius Rucker",
     key: "G",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/wagon-wheel-old-crow-medicine-show-chart.pdf"
   },
   {
@@ -101,7 +107,7 @@ window.SONGS = [
     title: "Hook",
     artist: "Blues Traveler",
     key: "G",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Hook - Blues Traveler.pdf"
   },
   {
@@ -109,7 +115,7 @@ window.SONGS = [
     title: "Two Tickets to Paradise",
     artist: "Eddie Money",
     key: "A",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/two-tickets-to-paradise-eddie-money-chart.pdf"
   },
   {
@@ -117,7 +123,7 @@ window.SONGS = [
     title: "Just What I Needed",
     artist: "The Cars",
     key: "E",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/just what i needed official.pdf"
   },
 
@@ -127,21 +133,21 @@ window.SONGS = [
     title: "I Gotta Feeling",
     artist: "Black Eyed Peas",
     key: "G",
-    audio: null
+    practice: null
   },
   {
     id: "keep-your-hands-to-yourself",
     title: "Keep Your Hands to Yourself",
     artist: "Georgia Satellites",
     key: "A",
-    audio: null
+    practice: null
   },
   {
     id: "crazy",
     title: "Crazy",
     artist: "Gnarls Barkley",
     key: "Cm",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Crazy - Gnarls Barkley.pdf"
   },
   {
@@ -149,7 +155,7 @@ window.SONGS = [
     title: "Down Under",
     artist: "Men At Work",
     key: "Am",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Down Under - Men at Work.pdf"
   },
   {
@@ -157,7 +163,7 @@ window.SONGS = [
     title: "Be My Girl",
     artist: "Jet",
     key: "E",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/be-my-girl.pdf"
   },
   {
@@ -165,7 +171,7 @@ window.SONGS = [
     title: "Eleanor Rigby",
     artist: "Beatles",
     key: "Em",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/eleanor-rigby-beatles-chart.pdf"
   },
   {
@@ -173,7 +179,7 @@ window.SONGS = [
     title: "Ain't No Sunshine",
     artist: "Bill Withers",
     key: "Am",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Ain't No Sunshine - Bill Withers.pdf"
   },
   {
@@ -181,7 +187,7 @@ window.SONGS = [
     title: "Hello",
     artist: "Adele",
     key: "Em",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/hello-adele-chart.pdf"
   },
   {
@@ -189,7 +195,7 @@ window.SONGS = [
     title: "Lights",
     artist: "Journey",
     key: "D",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/lights-journey-chart.pdf"
   },
   {
@@ -197,7 +203,7 @@ window.SONGS = [
     title: "Lovin' Touchin' Squeezin'",
     artist: "Journey",
     key: "E",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/lovin-touchin-squeezin-journey-chart.pdf"
   },
   {
@@ -205,7 +211,7 @@ window.SONGS = [
     title: "I Will Survive",
     artist: "Cake",
     key: "Am",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/I Will Survive.pdf",
     notes: "Reference: https://youtu.be/f9rCUQjmkxU?si=Hgi9fckZ4AxhJayr"
   },
@@ -214,7 +220,7 @@ window.SONGS = [
     title: "Come Together",
     artist: "Beatles",
     key: "Dm",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/come-together-beatles-chart.pdf"
   },
 
@@ -224,7 +230,7 @@ window.SONGS = [
     title: "You Wreck Me",
     artist: "Tom Petty",
     key: "E",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/You Wreck Me - Tom Petty.pdf",
     notes: "E Mixolydian (D–A–E vamp)."
   },
@@ -233,13 +239,13 @@ window.SONGS = [
     title: "SexyBack",
     artist: "Justin Timberlake",
     key: "Am",
-    audio: null
+    practice: null
   },
   {
     id: "make-you-feel-my-love",
     title: "Make You Feel My Love",
     key: "G",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Make You Feel My Love.pdf"
   },
   {
@@ -247,14 +253,14 @@ window.SONGS = [
     title: "Free Fallin'",
     artist: "Tom Petty",
     key: "F",
-    audio: null
+    practice: null
   },
   {
     id: "sultans-of-swing",
     title: "Sultans of Swing",
     artist: "Dire Straits",
     key: "Dm",
-    audio: null,
+    practice: "audio/Sultans of Swing (practice track).m4a",
     chartPdf: "charts-pdf/sultans of swing official.pdf"
   },
   {
@@ -262,7 +268,8 @@ window.SONGS = [
     title: "Get Lucky (Martin Miller version)",
     artist: "Daft Punk",
     key: "Bm",
-    audio: null,
+    original: "audio/Get Lucky (Martin Miller Band).m4a",
+    practice: "audio/Get Lucky (practice track).m4a",
     chartPdf: "charts-pdf/Get Lucky - Daft Punk.pdf",
     notes: "Reference: https://youtu.be/oPkaHxvxoso?si=GyZ9F9G-LiFmZBO-. Imported chart is the standard studio-recording chart, not the Martin Miller arrangement — treat as a rough reference only."
   },
@@ -271,7 +278,7 @@ window.SONGS = [
     title: "Rikki Don't Lose That Number",
     artist: "Steely Dan",
     key: "Em",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/rikki-steely-dan-chart.pdf"
   },
   {
@@ -279,21 +286,21 @@ window.SONGS = [
     title: "Tennessee Whiskey",
     artist: "Chris Stapleton",
     key: "A",
-    audio: null
+    practice: null
   },
   {
     id: "valerie",
     title: "Valerie",
     artist: "Amy Winehouse",
     key: "E♭",
-    audio: null
+    practice: null
   },
   {
     id: "colors",
     title: "Colors",
     artist: "Black Pumas",
     key: "Em",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/colors-black-pumas-chart.pdf"
   },
 
@@ -306,7 +313,7 @@ window.SONGS = [
     title: "It's the End of the World",
     artist: "R.E.M.",
     key: "G",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/It's the End of the World - R.E.M..pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -315,7 +322,7 @@ window.SONGS = [
     title: "La Isla Bonita",
     artist: "Madonna",
     key: "C♯m",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/La Isla Bonita - Madonna.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -324,7 +331,7 @@ window.SONGS = [
     title: "Listen to the Music",
     artist: "Doobie Brothers",
     key: "D",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Listen to the Music.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -333,7 +340,7 @@ window.SONGS = [
     title: "Modern Love",
     artist: "David Bowie",
     key: "D",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Modern Love - David Bowie.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -342,7 +349,7 @@ window.SONGS = [
     title: "I Wanna Dance With Somebody",
     artist: "Whitney Houston",
     key: "G♭",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/I Wanna Dance With Somebody - Whitney Houston.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -351,7 +358,7 @@ window.SONGS = [
     title: "I Can't Go For That",
     artist: "Daryl Hall & Cee Lo Green",
     key: "Fm",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/I Can't Go For That.pdf",
     notes: "Artist billing as printed on the chart (mashup arrangement) — key inferred from chart, unconfirmed."
   },
@@ -360,7 +367,7 @@ window.SONGS = [
     title: "Dancing Queen",
     artist: "ABBA",
     key: "A",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Dancing Queen - ABBA.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -369,7 +376,7 @@ window.SONGS = [
     title: "Ain't Nobody",
     artist: "Chaka Khan",
     key: "E♭m",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Ain't Nobody - Chaka Khan.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -378,7 +385,7 @@ window.SONGS = [
     title: "I Heard It Through the Grapevine",
     artist: "Gladys Knight & the Pips",
     key: "C",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/I Heard It Through the Grapevine - Gladys Knight and the Pips.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -387,7 +394,7 @@ window.SONGS = [
     title: "Superstition",
     artist: "Stevie Wonder",
     key: "Em",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Superstition - Stevie Wonder.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -396,7 +403,7 @@ window.SONGS = [
     title: "Blue Skies",
     artist: "Eva Cassidy",
     key: "B♭m",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Blue Skies (chords) - Eva Cassidy.pdf"
   },
   {
@@ -404,7 +411,7 @@ window.SONGS = [
     title: "Mercy",
     artist: "Duffy",
     key: "G",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Mercy - Duffy.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -413,7 +420,7 @@ window.SONGS = [
     title: "Take The Money and Run",
     artist: "Steve Miller Band",
     key: "G",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Take The Money and Run - Steve Miller Band.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -422,7 +429,7 @@ window.SONGS = [
     title: "The River of Dreams",
     artist: "Billy Joel",
     key: "E",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/The River of Dreams - Billy Joel (E).pdf"
   },
   {
@@ -430,7 +437,7 @@ window.SONGS = [
     title: "Ocean Eyes",
     artist: "Billie Eilish",
     key: "C",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/ocean eyes.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -439,7 +446,7 @@ window.SONGS = [
     title: "Let Her Go",
     artist: "Passenger",
     key: "C",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Let Her Go - Passenger.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -448,7 +455,7 @@ window.SONGS = [
     title: "I'll Be There",
     artist: "Walk Off the Earth",
     key: "F♯m",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/I'll Be There - Walk Off the Earth.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -457,7 +464,7 @@ window.SONGS = [
     title: "Drowning in the Sea of Love",
     artist: "Eva Cassidy",
     key: "Cm",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Drowning in the Sea of Love - Eva Cassidy.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -466,7 +473,7 @@ window.SONGS = [
     title: "Love Sneakin' Up On You",
     artist: "Bonnie Raitt",
     key: "D",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Love Sneakin' Up On You - Bonnie Raitt.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -475,7 +482,7 @@ window.SONGS = [
     title: "Sweet Dreams / Seven Nation Army",
     artist: "Eurythmics / The White Stripes (mashup)",
     key: "Cm",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Sweet Dreams - Seven Nation Army.pdf",
     notes: "Title/artist inferred from filename — verify this is the intended mashup arrangement. Key inferred from chart, unconfirmed."
   },
@@ -484,7 +491,7 @@ window.SONGS = [
     title: "Back On the Chain Gang",
     artist: "Pretenders",
     key: "D",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Back On the Chain Gang - Pretenders.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -493,7 +500,7 @@ window.SONGS = [
     title: "All That You Dream",
     artist: "Little Feat",
     key: "G",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/All That You Dream.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -502,7 +509,7 @@ window.SONGS = [
     title: "Insider",
     artist: "Tom Petty & the Heartbreakers (feat. Stevie Nicks)",
     key: "A",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Insider - Tom Petty & the Heartbreakers & Stevie Nicks.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -511,7 +518,7 @@ window.SONGS = [
     title: "Ex's & Oh's",
     artist: "Elle King",
     key: "Em",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Ex's & Oh's - Elle King.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -520,7 +527,7 @@ window.SONGS = [
     title: "Higher Love",
     artist: "Steve Winwood",
     key: "C",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Higher Love - Steve Winwood.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -529,7 +536,7 @@ window.SONGS = [
     title: "Just the Two of Us",
     artist: "Bill Withers",
     key: "E♭",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Just the Two of Us - Bill Withers.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -538,7 +545,7 @@ window.SONGS = [
     title: "Everybody Wants to Rule the World",
     artist: "Tears for Fears",
     key: "D",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Everybody Wants to Rule the World - D.pdf",
     notes: "Source filename was truncated (\"- D.pdf\") — artist inferred, please verify. Key inferred from chart, unconfirmed."
   },
@@ -547,7 +554,7 @@ window.SONGS = [
     title: "Love Letter",
     artist: "Bonnie Raitt",
     key: "D",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Love Letter - Bonnie Raitt.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -556,7 +563,7 @@ window.SONGS = [
     title: "Tainted Love",
     artist: "Soft Cell",
     key: "Gm",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Tainted Love - Soft Cell.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -565,7 +572,7 @@ window.SONGS = [
     title: "Angel from Montgomery",
     artist: "John Prine",
     key: "E",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Angel from Montgomery - John Prine.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -574,7 +581,7 @@ window.SONGS = [
     title: "Something to Talk About",
     artist: "Bonnie Raitt",
     key: "A♭",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Something to Talk About - Bonnie Raitt.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -583,7 +590,7 @@ window.SONGS = [
     title: "Walk On the Ocean",
     artist: "Toad the Wet Sprocket",
     key: "B",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Walk On the Ocean - Toad the Wet Sprocket.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -592,7 +599,7 @@ window.SONGS = [
     title: "I Believe I'm In Love With You",
     artist: "Bonnie Raitt",
     key: "C",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/I Believe I'm In Love With You - Bonnie Raitt.pdf",
     notes: "Key inferred from chart, unconfirmed."
   },
@@ -601,7 +608,7 @@ window.SONGS = [
     title: "You Can Leave Your Hat On",
     artist: "Joe Cocker",
     key: "C",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/You Can Leave Your Hat On.pdf",
     notes: "Artist not printed on chart, filled in from common knowledge — please verify. Key inferred from chart, unconfirmed."
   },
@@ -610,7 +617,7 @@ window.SONGS = [
     title: "Rock This Town",
     artist: "Stray Cats",
     key: "D",
-    audio: null,
+    practice: null,
     chartPdf: "charts-pdf/Rock This Town - Stray Cats.pdf",
     notes: "Key inferred from chart, unconfirmed."
   }
