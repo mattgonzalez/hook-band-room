@@ -163,7 +163,8 @@ window.SONGS = [
     title: "Be My Girl",
     artist: "Jet",
     key: "E",
-    practice: null,
+    original: "audio/Be My Girl (Key of E).m4a",
+    practice: "audio/Be My Girl (Key of E, practice track).m4a",
     chartPdf: "charts-pdf/be-my-girl.pdf"
   },
   {
