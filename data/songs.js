@@ -211,7 +211,8 @@ window.SONGS = [
     title: "I Will Survive",
     artist: "Cake",
     key: "Am",
-    practice: null,
+    original: "audio/I Will Survive.m4a",
+    practice: "audio/I Will Survive (practice track).m4a",
     chartPdf: "charts-pdf/I Will Survive.pdf",
     notes: "Reference: https://youtu.be/f9rCUQjmkxU?si=Hgi9fckZ4AxhJayr"
   },
