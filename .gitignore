@@ -1,5 +1,11 @@
 .DS_Store
 
-
-# DAW projects and stems — publish bounced .m4a/.mp3 files only
+# Logic Pro projects and stems — publish bounced .m4a/.mp3 files only
 *.logicx
+*.logic
+# Folder-based Logic projects keep media beside the project file
+Audio Files/
+Bounces/
+Freeze Files/
+Project File Backups/
+Alternatives/
