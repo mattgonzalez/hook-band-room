@@ -262,6 +262,7 @@ window.SONGS = [
     title: "Sultans of Swing",
     artist: "Dire Straits",
     key: "Dm",
+    original: "audio/Sultans of Swing.m4a",
     practice: "audio/Sultans of Swing (practice track).m4a",
     chartPdf: "charts-pdf/sultans of swing official.pdf"
   },
