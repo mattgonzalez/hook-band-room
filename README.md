@@ -23,7 +23,7 @@ Everything lives in three files:
 
 | File | What it holds |
 |---|---|
-| `data/songs.js` | The song catalog: title, key, tempo, capo, original/practice audio, notes |
+| `data/songs.js` | The song catalog: title, key, tempo, capo, original/drumBass/noDrums audio, notes |
 | `data/charts.js` | One chord chart per song id, as plain text |
 | `data/gigs.js` | Gigs with date, venue, logistics, and setlists (lists of song ids) |
 
@@ -37,11 +37,11 @@ Everything lives in three files:
 `{c: some note}` renders as an italic comment. Transpose, text size, and
 auto-scroll are built into the chart view.
 
-**Recordings**: each song can have two tracks — `original` (the
-reference recording) and `practice` (the band's rehearsal/guide track).
-Drop MP3s into `audio/` and set either or both fields, e.g.
-`practice: "audio/use-me-rehearsal.mp3"`. The player bar has an Original /
-Practice dropdown; a missing track is greyed out. Full URLs (Dropbox direct
+**Recordings**: each song can have three tracks — `original` (the
+reference recording), `drumBass` (drums + bass only) and `noDrums` (the
+mix minus drums). Drop MP3s into `audio/` and set any of the fields, e.g.
+`noDrums: "audio/use-me-no-drums.mp3"`. The player bar has an Original /
+Drum + bass / No drums dropdown; a missing track is greyed out. Full URLs (Dropbox direct
 links, etc.) also work. GitHub blocks single files over 100 MB and
 recommends keeping the repo under ~1 GB — a typical rehearsal MP3 is
 5–10 MB, so a full setlist's worth is fine. For long multitrack bounces,

@@ -21,7 +21,8 @@
   // Recording fields on a song, in player dropdown order.
   const TRACKS = [
     { field: "original", label: "Original" },
-    { field: "practice", label: "Practice" }
+    { field: "drumBass", label: "Drum + bass" },
+    { field: "noDrums", label: "No drums" }
   ];
 
   document.getElementById("song-count").textContent =
@@ -341,8 +342,8 @@
       .join("");
     playerTrack.onchange = () => selectTrack(song, tracks.find(t => t.field === playerTrack.value));
     playerBar.hidden = false;
-    // Default to the practice track when there is one.
-    selectTrack(song, tracks.find(t => t.field === "practice") || tracks[0]);
+    // Default to a play-along track when there is one.
+    selectTrack(song, tracks.find(t => t.field !== "original") || tracks[0]);
   }
   function selectTrack(song, track) {
     const src = song[track.field];
