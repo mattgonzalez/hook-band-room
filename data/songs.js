@@ -30,15 +30,18 @@ window.SONGS = [
  artist: "Steve Miller Band",
  key: "Am",
  original: "audio/Fly Like an Eagle (Playing For Change).m4a",
+ drumBass: "audio/Fly Like an Eagle (drum + bass).m4a",
  chartPdf: "charts-pdf/fly-like-an-eagle-steve-miller-band-chart.pdf"
   },
   /* --- Set 1 --- */
   {
     id: "goin-down",
     title: "Goin' Down",
-    artist: "Freddie King",
-    key: "D",
-    original: "audio/Goin' Down.m4a"
+    artist: "Jeff Beck",
+    key: "C",
+    tempo: 90,
+    original: "audio/Goin' Down.m4a",
+    drumBass: "audio/Goin' Down (drum + bass).m4a"
   },
   {
     id: "mrs-robinson",
@@ -54,7 +57,10 @@ window.SONGS = [
     title: "Crazy Little Thing Called Love",
     artist: "Queen",
     key: "D",
+    tempo: 154,
     original: "audio/Crazy Little Thing Called Love.m4a",
+    drumBass: "audio/Crazy Little Thing Called Love (drum + bass).m4a",
+    noDrums: "audio/Crazy Little Thing Called Love (no drums).m4a",
     chartPdf: "charts-pdf/Crazy Little Thing Called Love (Queen).pdf"
   },
   {
@@ -104,8 +110,9 @@ window.SONGS = [
     title: "Wagon Wheel",
     artist: "Darius Rucker",
     key: "G",
-    drumBass: null,
-    noDrums: null,
+    tempo: 80,
+    original: "audio/Wagon Wheel.m4a",
+    noDrums: "audio/Wagon Wheel (no drums).m4a",
     chartPdf: "charts-pdf/wagon-wheel-old-crow-medicine-show-chart.pdf"
   },
   {
@@ -131,6 +138,7 @@ window.SONGS = [
     title: "Just What I Needed",
     artist: "The Cars",
     key: "E",
+    original: "audio/Just What I Needed.m4a",
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/just what i needed official.pdf"
@@ -142,6 +150,7 @@ window.SONGS = [
     title: "I Gotta Feeling",
     artist: "Black Eyed Peas",
     key: "G",
+    original: "audio/I Gotta Feeling (Rock Remix).m4a",
     drumBass: null,
     noDrums: null
   },
@@ -167,15 +176,18 @@ window.SONGS = [
     title: "Down Under",
     artist: "Men At Work",
     key: "Am",
-    drumBass: null,
-    noDrums: null,
+    tempo: 96,
+    original: "audio/Down Under (Am).m4a",
+    drumBass: "audio/Down Under (drum + bass).m4a",
+    noDrums: "audio/Down Under (Am, no drums).m4a",
     chartPdf: "charts-pdf/Down Under - Men at Work.pdf"
   },
   {
     id: "be-my-girl",
-    title: "Be My Girl",
+    title: "Are You Gonna Be My Girl",
     artist: "Jet",
     key: "E",
+    tempo: 210,
     original: "audio/Be My Girl (Key of E).m4a",
     drumBass: "audio/Be My Girl (Key of E, drum + bass).m4a",
     noDrums: "audio/Be My Girl (Key of E, no drums).m4a",
@@ -231,6 +243,7 @@ window.SONGS = [
     title: "I Will Survive",
     artist: "Cake",
     key: "Am",
+    tempo: 92,
     original: "audio/I Will Survive.m4a",
     drumBass: "audio/I Will Survive (drum + bass).m4a",
     noDrums: "audio/I Will Survive (no drums).m4a",
@@ -288,6 +301,8 @@ window.SONGS = [
     artist: "Dire Straits",
     key: "Dm",
     original: "audio/Sultans of Swing.m4a",
+    drumBass: "audio/Sultans of Swing (drum + bass).m4a",
+    noDrums: "audio/Sultans of Swing (no drums).m4a",
     chartPdf: "charts-pdf/sultans of swing official.pdf"
   },
   {
@@ -296,6 +311,8 @@ window.SONGS = [
     artist: "Daft Punk",
     key: "Bm",
     original: "audio/Get Lucky (Martin Miller Band).m4a",
+    drumBass: "audio/Get Lucky (Martin Miller Band, drum + bass).m4a",
+    noDrums: "audio/Get Lucky (Martin Miller Band, no drums).m4a",
     chartPdf: "charts-pdf/Get Lucky - Daft Punk.pdf",
     notes: "Reference: https://youtu.be/oPkaHxvxoso?si=GyZ9F9G-LiFmZBO-. Imported chart is the standard studio-recording chart, not the Martin Miller arrangement — treat as a rough reference only."
   },
@@ -329,8 +346,10 @@ window.SONGS = [
     title: "Colors",
     artist: "Black Pumas",
     key: "Em",
-    drumBass: null,
-    noDrums: null,
+    tempo: 92,
+    original: "audio/Colors.m4a",
+    drumBass: "audio/Colors (Em, drum + bass).m4a",
+    noDrums: "audio/Colors (Em, no drums).m4a",
     chartPdf: "charts-pdf/colors-black-pumas-chart.pdf"
   },
 
