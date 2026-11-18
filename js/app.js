@@ -10,6 +10,7 @@
   const playerAudio = document.getElementById("player-audio");
   const playerTitle = document.getElementById("player-title");
   const playerTrack = document.getElementById("player-track");
+  const mixerEl = document.getElementById("mixer");
 
   const SONGS = window.SONGS || [];
   const CHARTS = window.CHARTS || {};
@@ -23,6 +24,15 @@
     { field: "original", label: "Original" },
     { field: "drumBass", label: "Drum + bass" },
     { field: "noDrums", label: "No drums" }
+  ];
+  // Stem slots for the mixer, in strip order. A song's `stems` object uses these keys.
+  const STEMS = [
+    { key: "vocals", label: "Vocals" },
+    { key: "drums",  label: "Drums" },
+    { key: "bass",   label: "Bass" },
+    { key: "guitar", label: "Guitar" },
+    { key: "piano",  label: "Piano" },
+    { key: "other",  label: "Other" }
   ];
 
   document.getElementById("song-count").textContent =
@@ -191,7 +201,6 @@
     });
   });
 
-  route();
 
   function route() {
     const hash = location.hash || "#/songs";
@@ -327,12 +336,39 @@
   }
 
   /* ---------------- Player ---------------- */
+  // Two modes share the fixed #player-bar:
+  //   - Stem mixer: when a song has `stems`, every stem is decoded into an
+  //     AudioBuffer and all of them start on the same AudioContext clock, so
+  //     they stay sample-locked. Each stem runs source -> gain -> analyser ->
+  //     destination; volume/mute/solo only move the gain.
+  //   - Legacy single-track player: songs without stems keep the
+  //     Original / Drum + bass / No drums dropdown and <audio> element.
 
+  function hasStems(song) {
+    return !!(song && song.stems && STEMS.some(s => song.stems[s.key]));
+  }
   function hasAudio(song) {
-    return TRACKS.some(t => song[t.field]);
+    return hasStems(song) || TRACKS.some(t => song[t.field]);
   }
 
   function showPlayer(song) {
+    const label = song.title + (song.artist ? " — " + song.artist : "");
+    playerTitle.textContent = label;
+    playerBar.hidden = false;
+    if (hasStems(song)) {
+      playerBar.classList.add("is-mixer");
+      playerAudio.pause();
+      playerAudio.removeAttribute("src");
+      playerTrack.innerHTML = "";
+      mixerShow(song);
+    } else {
+      playerBar.classList.remove("is-mixer");
+      mixerUnload();
+      showTrackPlayer(song);
+    }
+    syncPlayerHeight();
+  }
+  function showTrackPlayer(song) {
     const tracks = TRACKS.filter(t => song[t.field]);
     // List every track type; ones this song lacks are shown but disabled.
     playerTrack.innerHTML = TRACKS
@@ -341,7 +377,6 @@
         : `<option value="${escapeAttr(t.field)}" disabled>${escapeHtml(t.label)} (none yet)</option>`)
       .join("");
     playerTrack.onchange = () => selectTrack(song, tracks.find(t => t.field === playerTrack.value));
-    playerBar.hidden = false;
     // Default to a play-along track when there is one.
     selectTrack(song, tracks.find(t => t.field !== "original") || tracks[0]);
   }
@@ -359,9 +394,346 @@
   }
   function hidePlayer() {
     playerBar.hidden = true;
+    playerBar.classList.remove("is-mixer");
     playerAudio.pause();
     playerAudio.removeAttribute("src");
     playerTrack.innerHTML = "";
+    mixerUnload();
+    syncPlayerHeight();
+  }
+
+  // Keep page content clear of the fixed bar, whose height depends on mode
+  // and on whether the mixer strips are expanded.
+  function syncPlayerHeight() {
+    const h = playerBar.hidden ? 0 : playerBar.offsetHeight;
+    document.documentElement.style.setProperty("--player-h", h + "px");
+  }
+  if (window.ResizeObserver) new ResizeObserver(syncPlayerHeight).observe(playerBar);
+
+  /* ---------------- Stem mixer ---------------- */
+
+  const DB_MIN = -60;   // slider bottom = off
+  const DB_MAX = 6;
+  const mx = {
+    ctx: null,
+    songId: null,
+    stems: [],          // [{ key, label, src, buffer, gain, analyser, el, error }]
+    sources: [],
+    loading: null,      // Promise while fetching/decoding
+    loadToken: 0,
+    playing: false,
+    startAt: 0,         // ctx time at which song position 0 would have played
+    offset: 0,          // song position (s) while paused
+    duration: 0,
+    seeking: false,
+    raf: 0,
+    mix: {}             // key -> { db, mute, solo }
+  };
+
+  function mixerCtx() {
+    if (!mx.ctx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      // iOS mutes Web Audio with the ring/silent switch unless the session
+      // is declared as media playback (Safari 16.4+).
+      try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) {}
+      mx.ctx = new AC();
+    }
+    return mx.ctx;
+  }
+
+  function mixKey(id) { return "hook-mix:" + id; }
+  function loadMix(id) {
+    try { return JSON.parse(localStorage.getItem(mixKey(id))) || {}; } catch (e) { return {}; }
+  }
+  function saveMix() {
+    try { localStorage.setItem(mixKey(mx.songId), JSON.stringify(mx.mix)); } catch (e) {}
+  }
+  function stripsCollapsed() {
+    try { return localStorage.getItem("hook-mixer-collapsed") === "1"; } catch (e) { return false; }
+  }
+
+  function mixerShow(song) {
+    if (mx.songId === song.id) return;   // same song: keep loaded buffers and position
+    mixerUnload();
+    mx.songId = song.id;
+    const saved = loadMix(song.id);
+    mx.mix = {};
+    mx.stems = STEMS.map(s => {
+      const m = saved[s.key] || {};
+      mx.mix[s.key] = {
+        db: typeof m.db === "number" ? Math.max(DB_MIN, Math.min(DB_MAX, m.db)) : 0,
+        mute: !!m.mute,
+        solo: !!m.solo
+      };
+      return { key: s.key, label: s.label, src: song.stems[s.key] || null, buffer: null, gain: null, analyser: null, el: null, error: null };
+    });
+    renderMixer();
+  }
+
+  function mixerUnload() {
+    mx.loadToken++;
+    mixerStopSources();
+    cancelAnimationFrame(mx.raf);
+    mx.stems.forEach(s => { s.buffer = null; if (s.gain) s.gain.disconnect(); if (s.analyser) s.analyser.disconnect(); });
+    mx.stems = [];
+    mx.songId = null;
+    mx.loading = null;
+    mx.playing = false;
+    mx.offset = 0;
+    mx.duration = 0;
+    mixerEl.innerHTML = "";
+  }
+
+  function renderMixer() {
+    const collapsed = stripsCollapsed();
+    mixerEl.innerHTML = `
+      <div class="mx-transport">
+        <button type="button" class="mx-btn mx-play" id="mx-play" aria-label="Play">&#9654;</button>
+        <span class="mx-time" id="mx-pos">0:00</span>
+        <input type="range" class="mx-seek" id="mx-seek" min="0" max="1000" step="1" value="0" aria-label="Song position" disabled>
+        <span class="mx-time" id="mx-dur">--:--</span>
+        <button type="button" class="mx-btn mx-collapse" id="mx-collapse" aria-expanded="${!collapsed}" aria-controls="mx-strips">${collapsed ? "Show mixer" : "Hide mixer"}</button>
+      </div>
+      <p class="mx-status" id="mx-status" role="status"></p>
+      <div class="mx-strips" id="mx-strips" ${collapsed ? "hidden" : ""}>
+        ${mx.stems.map(s => {
+          const m = mx.mix[s.key];
+          const off = !s.src;
+          return `
+          <div class="mx-strip${off ? " is-empty" : ""}" data-stem="${escapeAttr(s.key)}" ${off ? 'title="No stem uploaded yet"' : ""}>
+            <div class="mx-strip-head">
+              <span class="mx-name">${escapeHtml(s.label)}</span>
+              <button type="button" class="mx-btn mx-mute" aria-pressed="${m.mute}" aria-label="Mute ${escapeAttr(s.label)}" ${off ? "disabled" : ""}>M</button>
+              <button type="button" class="mx-btn mx-solo" aria-pressed="${m.solo}" aria-label="Solo ${escapeAttr(s.label)}" ${off ? "disabled" : ""}>S</button>
+            </div>
+            <input type="range" class="mx-vol" min="${DB_MIN}" max="${DB_MAX}" step="0.5" value="${m.db}" aria-label="${escapeAttr(s.label)} volume" ${off ? "disabled" : ""}>
+            <div class="mx-meter" aria-hidden="true"><span></span></div>
+            <span class="mx-db">${off ? "none yet" : fmtDb(m.db)}</span>
+          </div>`;
+        }).join("")}
+      </div>
+    `;
+    mx.stems.forEach(s => { s.el = mixerEl.querySelector(`.mx-strip[data-stem="${s.key}"]`); });
+
+    const playBtn = document.getElementById("mx-play");
+    const seek = document.getElementById("mx-seek");
+    playBtn.onclick = () => (mx.playing ? mixerPause() : mixerPlay());
+    seek.oninput = () => { mx.seeking = true; setTimeLabels(seek.value / 1000 * mx.duration); };
+    seek.onchange = () => { mx.seeking = false; mixerSeek(seek.value / 1000 * mx.duration); };
+    document.getElementById("mx-collapse").onclick = (e) => {
+      const strips = document.getElementById("mx-strips");
+      strips.hidden = !strips.hidden;
+      e.currentTarget.setAttribute("aria-expanded", String(!strips.hidden));
+      e.currentTarget.textContent = strips.hidden ? "Show mixer" : "Hide mixer";
+      try { localStorage.setItem("hook-mixer-collapsed", strips.hidden ? "1" : "0"); } catch (err) {}
+      syncPlayerHeight();
+    };
+
+    mx.stems.forEach(s => {
+      if (!s.src) return;
+      const m = mx.mix[s.key];
+      const vol = s.el.querySelector(".mx-vol");
+      const db = s.el.querySelector(".mx-db");
+      vol.oninput = () => { m.db = Number(vol.value); db.textContent = fmtDb(m.db); applyGains(); saveMix(); };
+      // Double-click the fader or readout to snap back to unity.
+      const reset = () => { m.db = 0; vol.value = 0; db.textContent = fmtDb(0); applyGains(); saveMix(); };
+      vol.ondblclick = reset;
+      db.ondblclick = reset;
+      s.el.querySelector(".mx-mute").onclick = (e) => {
+        m.mute = !m.mute; e.currentTarget.setAttribute("aria-pressed", String(m.mute)); applyGains(); saveMix();
+      };
+      s.el.querySelector(".mx-solo").onclick = (e) => {
+        m.solo = !m.solo; e.currentTarget.setAttribute("aria-pressed", String(m.solo)); applyGains(); saveMix();
+      };
+    });
+    applyGains();
+  }
+
+  function fmtDb(db) {
+    if (db <= DB_MIN) return "off";
+    return (db > 0 ? "+" : "") + db.toFixed(1) + " dB";
+  }
+  function fmtTime(t) {
+    if (!isFinite(t)) return "--:--";
+    t = Math.max(0, Math.floor(t));
+    return Math.floor(t / 60) + ":" + String(t % 60).padStart(2, "0");
+  }
+  function setTimeLabels(pos) {
+    const p = document.getElementById("mx-pos");
+    if (p) p.textContent = fmtTime(pos);
+  }
+  function setStatus(msg) {
+    const el = document.getElementById("mx-status");
+    if (el) { el.textContent = msg || ""; el.hidden = !msg; syncPlayerHeight(); }
+  }
+
+  // Effective gain: mute wins; if anything is soloed, only soloed stems play.
+  function applyGains() {
+    const anySolo = mx.stems.some(s => s.src && mx.mix[s.key].solo);
+    mx.stems.forEach(s => {
+      if (!s.src) return;
+      const m = mx.mix[s.key];
+      const audible = !m.mute && (!anySolo || m.solo);
+      if (s.el) s.el.classList.toggle("is-silent", !audible);
+      if (!s.gain) return;
+      const g = audible && m.db > DB_MIN ? Math.pow(10, m.db / 20) : 0;
+      // Short ramp so mute/solo/fader moves don't click.
+      s.gain.gain.setTargetAtTime(g, mx.ctx.currentTime, 0.012);
+    });
+  }
+
+  function mixerLoad() {
+    if (mx.loading) return mx.loading;
+    const ctx = mixerCtx();
+    if (!ctx) { setStatus("This browser doesn't support Web Audio."); return Promise.reject(); }
+    const token = mx.loadToken;
+    const wanted = mx.stems.filter(s => s.src);
+    let done = 0;
+    setStatus(`Loading stems 0/${wanted.length}…`);
+    mx.loading = Promise.all(wanted.map(s =>
+      fetch(s.src)
+        .then(r => { if (!r.ok) throw new Error(r.status + " " + r.statusText); return r.arrayBuffer(); })
+        // Older Safari only has the callback form of decodeAudioData.
+        .then(data => new Promise((res, rej) => ctx.decodeAudioData(data, res, rej)))
+        .then(buf => { if (token === mx.loadToken) s.buffer = buf; })
+        .catch(err => { s.error = err && err.message ? err.message : "could not load"; })
+        .finally(() => { if (token === mx.loadToken) setStatus(`Loading stems ${++done}/${wanted.length}…`); })
+    )).then(() => {
+      if (token !== mx.loadToken) throw new Error("stale");
+      mx.stems.forEach(s => {
+        if (!s.buffer) return;
+        s.gain = ctx.createGain();
+        s.analyser = ctx.createAnalyser();
+        s.analyser.fftSize = 512;
+        s.gain.connect(s.analyser).connect(ctx.destination);
+      });
+      applyGains();
+      const loaded = mx.stems.filter(s => s.buffer);
+      mx.duration = loaded.reduce((d, s) => Math.max(d, s.buffer.duration), 0);
+      document.getElementById("mx-dur").textContent = fmtTime(mx.duration);
+      document.getElementById("mx-seek").disabled = !loaded.length;
+      const failed = mx.stems.filter(s => s.src && !s.buffer);
+      failed.forEach(f => {
+        f.el.classList.add("is-error");
+        f.el.querySelector(".mx-db").textContent = "missing";
+        f.el.title = f.src + " — " + f.error;
+      });
+      if (!loaded.length) {
+        mx.loading = null;   // allow a retry
+        setStatus(location.protocol === "file:"
+          ? "Stems can't load from a file:// page. Serve the folder (python3 -m http.server) or use the live site."
+          : "Couldn't load any stems for this song.");
+        throw new Error("no stems");
+      }
+      setStatus(failed.length
+        ? "Couldn't load: " + failed.map(f => f.label).join(", ") + " (hover the strip for details)."
+        : "");
+    });
+    return mx.loading;
+  }
+
+  function mixerPlay() {
+    const ctx = mixerCtx();
+    if (!ctx) return;
+    // resume() must be called from the click itself for iOS/Chrome autoplay rules.
+    if (ctx.state !== "running") ctx.resume();
+    const btn = document.getElementById("mx-play");
+    if (btn) btn.disabled = true;
+    const token = mx.loadToken;
+    mixerLoad().then(() => {
+      if (token !== mx.loadToken) return;
+      if (mx.offset >= mx.duration) mx.offset = 0;
+      mixerStartSources(mx.offset);
+    }).catch(() => {}).finally(() => {
+      const b = document.getElementById("mx-play");
+      if (b && token === mx.loadToken) b.disabled = false;
+    });
+  }
+
+  function mixerStartSources(offset) {
+    const ctx = mx.ctx;
+    mixerStopSources();
+    // Schedule every stem for the same instant a few ms ahead so they start together.
+    const when = ctx.currentTime + 0.06;
+    mx.sources = mx.stems.filter(s => s.buffer).map(s => {
+      const src = ctx.createBufferSource();
+      src.buffer = s.buffer;
+      src.connect(s.gain);
+      if (offset < s.buffer.duration) src.start(when, offset);
+      return src;
+    });
+    mx.startAt = when - offset;
+    mx.playing = true;
+    updatePlayButton();
+    cancelAnimationFrame(mx.raf);
+    mx.raf = requestAnimationFrame(mixerTick);
+  }
+
+  function mixerStopSources() {
+    mx.sources.forEach(src => { try { src.stop(); } catch (e) {} src.disconnect(); });
+    mx.sources = [];
+  }
+
+  function mixerPosition() {
+    return mx.playing ? Math.min(mx.duration, mx.ctx.currentTime - mx.startAt) : mx.offset;
+  }
+
+  function mixerPause() {
+    if (!mx.playing) return;
+    mx.offset = mixerPosition();
+    mixerStopSources();
+    mx.playing = false;
+    updatePlayButton();
+  }
+
+  function mixerSeek(t) {
+    t = Math.max(0, Math.min(mx.duration || 0, t));
+    if (mx.playing) mixerStartSources(t);
+    else { mx.offset = t; setTimeLabels(t); }
+  }
+
+  function updatePlayButton() {
+    const btn = document.getElementById("mx-play");
+    if (!btn) return;
+    btn.innerHTML = mx.playing ? "&#10074;&#10074;" : "&#9654;";
+    btn.setAttribute("aria-label", mx.playing ? "Pause" : "Play");
+  }
+
+  const meterData = new Float32Array(512);
+  function mixerTick() {
+    if (!mx.playing) { resetMeters(); return; }
+    const pos = mixerPosition();
+    if (pos >= mx.duration) {
+      mixerPause();
+      mx.offset = 0;
+      setTimeLabels(0);
+      const seek = document.getElementById("mx-seek");
+      if (seek) seek.value = 0;
+      resetMeters();
+      return;
+    }
+    if (!mx.seeking) {
+      setTimeLabels(pos);
+      const seek = document.getElementById("mx-seek");
+      if (seek && mx.duration) seek.value = Math.round(pos / mx.duration * 1000);
+    }
+    mx.stems.forEach(s => {
+      if (!s.analyser || !s.el) return;
+      s.analyser.getFloatTimeDomainData(meterData);
+      let peak = 0;
+      for (let i = 0; i < meterData.length; i++) { const v = Math.abs(meterData[i]); if (v > peak) peak = v; }
+      // Map -48..0 dBFS onto the meter width.
+      const db = peak > 0 ? 20 * Math.log10(peak) : -Infinity;
+      const pct = Math.max(0, Math.min(100, (db + 48) / 48 * 100));
+      const bar = s.el.querySelector(".mx-meter span");
+      bar.style.width = pct + "%";
+      bar.classList.toggle("hot", db > -1);
+    });
+    mx.raf = requestAnimationFrame(mixerTick);
+  }
+  function resetMeters() {
+    mixerEl.querySelectorAll(".mx-meter span").forEach(b => { b.style.width = "0"; b.classList.remove("hot"); });
   }
 
   /* ---------------- Gigs ---------------- */
@@ -582,4 +954,6 @@
   }
   function escapeAttr(s) { return escapeHtml(s); }
 
+  // Initial render last, so every const above (mixer state included) is initialised.
+  route();
 })();

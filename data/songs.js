@@ -14,7 +14,21 @@
      noDrums: play-along mix with the drums removed — same format.
              Leave null if none yet. The player bar's Original /
              Drum + bass / No drums dropdown greys out whichever
-             ones are missing.
+             ones are missing. Songs that have `stems` use the
+             stem mixer instead, so these three are ignored there.
+     stems:  up to six separated stems, mixed live in the browser
+             with a volume fader, mute and solo per stem:
+               stems: {
+                 vocals: "audio/stems/<id>/vocals.m4a",
+                 drums:  "audio/stems/<id>/drums.m4a",
+                 bass:   "audio/stems/<id>/bass.m4a",
+                 guitar: "audio/stems/<id>/guitar.m4a",
+                 piano:  "audio/stems/<id>/piano.m4a",
+                 other:  "audio/stems/<id>/other.m4a"
+               }
+             Leave out any stem you don't have; its strip shows as
+             "none yet". All stems must start at the same point and
+             share a sample rate (bounce them from one session).
      chordsheet: public URL of the song's sheet on chordsheet.com
              (unlock it there via Sharing → Public URL). Adds an
              "Open on Chordsheet ↗" button to the chart toolbar.
@@ -248,7 +262,15 @@ window.SONGS = [
     drumBass: "audio/I Will Survive (drum + bass).m4a",
     noDrums: "audio/I Will Survive (no drums).m4a",
     chartPdf: "charts-pdf/I Will Survive.pdf",
-    notes: "Reference: https://youtu.be/f9rCUQjmkxU?si=Hgi9fckZ4AxhJayr"
+    notes: "Reference: https://youtu.be/f9rCUQjmkxU?si=Hgi9fckZ4AxhJayr",
+    stems: {
+      vocals: "audio/stems/i-will-survive/vocals.m4a",
+      drums:  "audio/stems/i-will-survive/drums.m4a",
+      bass:   "audio/stems/i-will-survive/bass.m4a",
+      guitar: "audio/stems/i-will-survive/guitar.m4a",
+      piano:  "audio/stems/i-will-survive/piano.m4a",
+      other:  "audio/stems/i-will-survive/other.m4a"
+    }
   },
   {
     id: "come-together",
@@ -303,7 +325,15 @@ window.SONGS = [
     original: "audio/Sultans of Swing.m4a",
     drumBass: "audio/Sultans of Swing (drum + bass).m4a",
     noDrums: "audio/Sultans of Swing (no drums).m4a",
-    chartPdf: "charts-pdf/sultans of swing official.pdf"
+    chartPdf: "charts-pdf/sultans of swing official.pdf",
+    stems: {
+      vocals: "audio/stems/sultans-of-swing/vocals.m4a",
+      drums:  "audio/stems/sultans-of-swing/drums.m4a",
+      bass:   "audio/stems/sultans-of-swing/bass.m4a",
+      guitar: "audio/stems/sultans-of-swing/guitar.m4a",
+      piano:  "audio/stems/sultans-of-swing/piano.m4a",
+      other:  "audio/stems/sultans-of-swing/other.m4a"
+    }
   },
   {
     id: "get-lucky",

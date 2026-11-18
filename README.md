@@ -23,7 +23,7 @@ Everything lives in three files:
 
 | File | What it holds |
 |---|---|
-| `data/songs.js` | The song catalog: title, key, tempo, capo, original/drumBass/noDrums audio, notes |
+| `data/songs.js` | The song catalog: title, key, tempo, capo, stems or original/drumBass/noDrums audio, notes |
 | `data/charts.js` | One chord chart per song id, as plain text |
 | `data/gigs.js` | Gigs with date, venue, logistics, and setlists (lists of song ids) |
 
@@ -37,7 +37,52 @@ Everything lives in three files:
 `{c: some note}` renders as an italic comment. Transpose, text size, and
 auto-scroll are built into the chart view.
 
-**Recordings**: each song can have three tracks — `original` (the
+**Stem mixer**: give a song up to six stems (Vocals, Drums, Bass,
+Guitar, Piano, Other) and the player bar becomes a live mixer: one
+transport, plus a strip per stem with a volume fader (−60 to +6 dB,
+double-click to snap back to 0 dB), Mute and Solo. Stems are decoded and
+started on the same Web Audio clock, so they stay sample-locked. Each
+band member's mix is remembered per song in their browser.
+
+Convention: one folder per song id, one file per stem, lower-case names:
+
+```
+audio/stems/<song-id>/vocals.m4a
+audio/stems/<song-id>/drums.m4a
+audio/stems/<song-id>/bass.m4a
+audio/stems/<song-id>/guitar.m4a
+audio/stems/<song-id>/piano.m4a
+audio/stems/<song-id>/other.m4a
+```
+
+then list whichever ones exist in `data/songs.js`:
+
+```js
+stems: {
+  vocals: "audio/stems/i-will-survive/vocals.m4a",
+  drums:  "audio/stems/i-will-survive/drums.m4a",
+  bass:   "audio/stems/i-will-survive/bass.m4a"
+}
+```
+
+Missing stems still get a strip, greyed out as "none yet". Bounce every
+stem from the same session so they start at the same point and share a
+sample rate. AAC (.m4a) around 160 kbps keeps a 5-minute song's six
+stems near 35 MB; MP3 works too. Converting Logic stem WAVs:
+
+```bash
+ffmpeg -i "Song_Vocals.wav" -c:a aac -b:a 160k -movflags +faststart audio/stems/<id>/vocals.m4a
+```
+
+Notes: stems download and decode in full when you first press Play
+(a few seconds on Wi-Fi), and decoded stems take roughly 100 MB of
+memory per stem for a 5-minute song, so six-stem songs are heavy on
+older phones. The mixer needs the site served over http(s) (GitHub
+Pages, or `python3 -m http.server` locally); browsers block loading
+audio data from a `file://` page.
+
+**Recordings (no stems)**: songs without `stems` keep the single-track
+player with three tracks — `original` (the
 reference recording), `drumBass` (drums + bass only) and `noDrums` (the
 mix minus drums). Drop MP3s into `audio/` and set any of the fields, e.g.
 `noDrums: "audio/use-me-no-drums.mp3"`. The player bar has an Original /

@@ -13,7 +13,7 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-Opening `index.html` directly from the filesystem also works — all data loads via `<script>` tags, not `fetch`, so there's no CORS issue with `file://`.
+Opening `index.html` directly from the filesystem also works — all data loads via `<script>` tags, not `fetch`, so there's no CORS issue with `file://`. The one exception is the stem mixer, which `fetch`es stem audio and so needs the site served over http.
 
 There is no test suite, linter, or build/bundle step. Verify changes by loading the page in a browser and checking the console.
 
@@ -24,7 +24,7 @@ All content lives in four data files loaded as global script tags (`index.html` 
 | File | Global | Holds |
 |---|---|---|
 | `data/band.js` | `window.BAND` | hero image path, backline/gear list |
-| `data/songs.js` | `window.SONGS` | song catalog: id, title, artist, key, tempo, capo, original/drumBass/noDrums audio paths, chordsheet/chartPdf links, notes |
+| `data/songs.js` | `window.SONGS` | song catalog: id, title, artist, key, tempo, capo, `stems` object or original/drumBass/noDrums audio paths, chordsheet/chartPdf links, notes |
 | `data/charts.js` | `window.CHARTS` | one chord chart per song, keyed by song `id`, as a plain-text template string |
 | `data/gigs.js` | `window.GIGS` | gigs with date/venue/logistics and `sets: [{ name, songs: [id...] }]` |
 
@@ -36,7 +36,10 @@ Song `id` is the join key across all three: `charts.js` keys off it, `gigs.js` s
 - **Chart parser + renderer** (`parseChart`, `renderChart`): converts chart text into typed line objects (`blank`, `section`, `comment`, `chords`, `lyric`, `pair`) and back into DOM. Supports two chart authoring styles in the same chart — inline `[Am]bracket` chords and classic chord-line-above-lyric-line — plus `[Section]` headers and `{c: comment}` lines. `isChordToken()` is the heuristic that disambiguates a bracketed section name from a bracketed chord, and a chord-only line from a lyric line that happens to start with a note letter.
 - **Transposition** (`transposeChord`, `transposeNote`, `guessFlats`): shifts chord roots by semitone offset (-11..+11) using `NOTE_INDEX`, choosing sharp vs. flat spelling per key via `FLAT_KEYS`. Applied live at render time, not persisted.
 - **Chordsheet.com integration**: `song.chordsheet` (public URL) renders a link button in the chart toolbar; `song.chartPdf` (local file in `charts-pdf/`) renders as an embedded `<object>` above the text chart. Both are optional and independent of the plain-text chart.
-- **Audio player**: a fixed bottom bar (`#player-bar`) shown when a song has `original`, `drumBass` and/or `noDrums` set (local path under `audio/` or a full URL); swapped in/out on song navigation via `showPlayer`/`hidePlayer`. `TRACKS` lists the recording fields; the bar has an Original / Drum + bass / No drums dropdown (`#player-track`) with missing tracks disabled, defaulting to the first play-along track available.
+- **Audio player**: a fixed bottom bar (`#player-bar`) shown when a song has audio; swapped in/out on song navigation via `showPlayer`/`hidePlayer` (the songbook view leaves it playing; the gigs view hides it). Two modes:
+  - **Stem mixer** (song has `stems`): `STEMS` lists the six slots (vocals, drums, bass, guitar, piano, other). On first Play, each stem is fetched and decoded to an `AudioBuffer`; every `AudioBufferSourceNode` is started at the same `AudioContext` time so stems stay sample-locked. Graph per stem: source → gain → analyser (meter) → destination. Volume (dB fader), mute and solo only move gains (`applyGains`: mute wins; any solo silences non-soloed stems). Seek/pause recreate the sources at an offset. Per-song mix is saved in `localStorage` under `hook-mix:<id>`. State lives in the `mx` object; `mixerUnload` drops buffers when switching songs. Needs http(s): `fetch` of audio fails from `file://`.
+  - **Single track** (no `stems`): `TRACKS` lists `original`, `drumBass`, `noDrums`; an Original / Drum + bass / No drums dropdown (`#player-track`) with missing tracks disabled, defaulting to the first play-along track available, driving `<audio id="player-audio">`.
+- `route()` is called at the very end of the IIFE so all `const` state (including the mixer's) is initialised before the first render.
 - All user-supplied strings (titles, notes, venue names, etc.) are rendered via `escapeHtml`/`escapeAttr` before being interpolated into `innerHTML` — preserve this when adding new fields that render as HTML.
 
 `css/styles.css` is a single stylesheet using CSS custom properties (e.g. `--chart-size`, adjusted live by the text-size buttons via `document.documentElement.style.setProperty`).
@@ -45,6 +48,7 @@ Song `id` is the join key across all three: `charts.js` keys off it, `gigs.js` s
 
 - **Songs**: add an entry to `data/songs.js` (see comment header in that file for field meanings) and a matching entry in `data/charts.js` keyed by the same `id`.
 - **Chart text format**: inline `[Am]lyric` brackets, or a chord-only line directly above a lyric line. `[Verse 1]` / `[Chorus]` alone on a line become section headers; `{c: note}` becomes an italic comment.
+- **Stems**: put files at `audio/stems/<song-id>/{vocals,drums,bass,guitar,piano,other}.m4a` and list the ones that exist in the song's `stems` object (keys are the stem names; values are paths or full URLs). Logic stem WAVs are gitignored; encode with `ffmpeg -i X.wav -c:a aac -b:a 160k -movflags +faststart out.m4a`.
 - **Recordings**: drop MP3s into `audio/` and reference them from a song's `original` (reference recording), `drumBass` (drums + bass only) or `noDrums` (mix minus drums) field (or use a full URL, e.g. a Dropbox direct link).
 - **Gigs**: add an entry to `data/gigs.js`; upcoming vs. past and "next up" tagging are computed automatically from `date`.
 - **Chordsheet.com**: `chordsheet` field takes the sheet's public share URL; `chartPdf` takes a path to a PDF dropped into `charts-pdf/`. Either or both can accompany a text chart in `charts.js`.
