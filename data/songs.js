@@ -967,6 +967,7 @@ window.SONGS = [
   {
     id: "gidget",
     title: "Gidget",
+    artist: "Free Nationals",
     drumBass: null,
     noDrums: null,
     notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
