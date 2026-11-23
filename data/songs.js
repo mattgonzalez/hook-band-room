@@ -921,5 +921,54 @@ window.SONGS = [
     noDrums: null,
     chartPdf: "charts-pdf/Rock This Town - Stray Cats.pdf",
     notes: "Key inferred from chart, unconfirmed."
+  },
+
+  /* --- Added for the Nov 28 Hook'd setlist; no chart or audio yet --- */
+  {
+    id: "lovely-day",
+    title: "Lovely Day",
+    artist: "Bill Withers",
+    drumBass: null,
+    noDrums: null,
+    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+  },
+  {
+    id: "use-me",
+    title: "Use Me",
+    artist: "Bill Withers",
+    drumBass: null,
+    noDrums: null,
+    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+  },
+  {
+    id: "wicked-game",
+    title: "Wicked Game",
+    artist: "Chris Isaak",
+    drumBass: null,
+    noDrums: null,
+    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+  },
+  {
+    id: "rolling-in-the-deep",
+    title: "Rolling in the Deep",
+    artist: "Adele",
+    drumBass: null,
+    noDrums: null,
+    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+  },
+  {
+    id: "miss-you",
+    title: "Miss You",
+    artist: "The Rolling Stones",
+    drumBass: null,
+    noDrums: null,
+    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+  },
+  {
+    id: "gidget",
+    title: "Gidget",
+    drumBass: null,
+    noDrums: null,
+    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
   }
 ];

@@ -212,6 +212,46 @@ window.GIGS = [
     mapUrl: "https://maps.app.goo.gl/9fhQfFUgpQFnxCu27",
     time: "2-5 PM",
     loadIn: "12 PM",
-    sets: []
+    sets: [
+      {
+        name: "Set 1",
+        songs: [
+          "down-under",
+          "lovely-day",
+          "drops-of-jupiter",
+          "aint-no-sunshine",
+          "rocket-man",
+          "colors",
+          "keep-your-hands-to-yourself",
+          "come-together"
+        ]
+      },
+      {
+        name: "Set 2",
+        songs: [
+          "goin-down",
+          "use-me",
+          "time",
+          "wicked-game",
+          "while-my-guitar-gently-weeps",
+          "people-get-ready",
+          "eleanor-rigby",
+          "lights"
+        ]
+      },
+      {
+        name: "Set 3",
+        songs: [
+          "taking-care-of-business",
+          "how-it-is",
+          "rolling-in-the-deep",
+          "miss-you",
+          "superstition",
+          "gidget",
+          "rock-this-town",
+          "tubthumping"
+        ]
+      }
+    ]
   }
 ];
