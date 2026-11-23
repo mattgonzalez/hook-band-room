@@ -9,3 +9,7 @@ Bounces/
 Freeze Files/
 Project File Backups/
 Alternatives/
+
+# Stems and source tracks are hosted on Dropbox (stems URLs live in data/songs.js)
+audio/stems/
+audio/source/

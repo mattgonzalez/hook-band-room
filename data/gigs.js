@@ -203,5 +203,15 @@ window.GIGS = [
     mapUrl: "https://www.google.com/maps/place/Corktree+Cellars,+Carpinteria+CA/data=!4m2!3m1!1s0x80e90ed125842fe1:0x7ffcb13be62bb983",
     time: "8-11 PM",
     sets: []
+  },
+  {
+    date: "2026-11-28",
+    venue: "Hook'd Bar & Grill",
+    city: "Santa Barbara, CA",
+    address: "116 Lakeview Drive, Santa Barbara, CA 93105",
+    mapUrl: "https://maps.app.goo.gl/9fhQfFUgpQFnxCu27",
+    time: "2-5 PM",
+    loadIn: "12 PM",
+    sets: []
   }
 ];

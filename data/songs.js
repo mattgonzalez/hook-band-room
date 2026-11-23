@@ -43,9 +43,16 @@ window.SONGS = [
  title: "Fly Like An Eagle",
  artist: "Steve Miller Band",
  key: "Am",
- original: "audio/Fly Like an Eagle (Playing For Change).m4a",
- drumBass: "audio/Fly Like an Eagle (drum + bass).m4a",
- chartPdf: "charts-pdf/fly-like-an-eagle-steve-miller-band-chart.pdf"
+ original: "audio/source/Fly Like an Eagle (Playing For Change).m4a",
+ chartPdf: "charts-pdf/fly-like-an-eagle-steve-miller-band-chart.pdf",
+ stems: {
+   vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAWKicXRRSd6Raxss_jR7KQ/Fly%20Like%20an%20Eagle%20%28Playing%20For%20Change%29/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+   drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AMwYn4H-Lc9oSb2jl8NfWs8/Fly%20Like%20an%20Eagle%20%28Playing%20For%20Change%29/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+   bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/APndH3OuThV8iuJXfRQels8/Fly%20Like%20an%20Eagle%20%28Playing%20For%20Change%29/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+   guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/APlEAtsThaPfFv8XQBDnFPo/Fly%20Like%20an%20Eagle%20%28Playing%20For%20Change%29/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+   piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ACEwEH8n4LW924nn7rSreOw/Fly%20Like%20an%20Eagle%20%28Playing%20For%20Change%29/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+   other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALFY-Mrl_BOYZb3_pGBETTc/Fly%20Like%20an%20Eagle%20%28Playing%20For%20Change%29/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+ }
   },
   /* --- Set 1 --- */
   {
@@ -54,8 +61,15 @@ window.SONGS = [
     artist: "Jeff Beck",
     key: "C",
     tempo: 90,
-    original: "audio/Goin' Down.m4a",
-    drumBass: "audio/Goin' Down (drum + bass).m4a"
+    original: "audio/source/Goin' Down.m4a",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKH_4C5coEIhYuK6jmDcYks/Goin%27%20Down/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALzc8cLTsdGp0j-hlTgnT0A/Goin%27%20Down/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AOnAPGfwwy-0rCbkfBbwEek/Goin%27%20Down/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ACWcHr3MPQiUcrXJGfIpLEw/Goin%27%20Down/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFQvyN-AKoALOVMMtoKLBGg/Goin%27%20Down/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AMTatFo4X-HOq2i7bg19zAc/Goin%27%20Down/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "mrs-robinson",
@@ -72,10 +86,16 @@ window.SONGS = [
     artist: "Queen",
     key: "D",
     tempo: 154,
-    original: "audio/Crazy Little Thing Called Love.m4a",
-    drumBass: "audio/Crazy Little Thing Called Love (drum + bass).m4a",
-    noDrums: "audio/Crazy Little Thing Called Love (no drums).m4a",
-    chartPdf: "charts-pdf/Crazy Little Thing Called Love (Queen).pdf"
+    original: "audio/source/Crazy Little Thing Called Love.m4a",
+    chartPdf: "charts-pdf/Crazy Little Thing Called Love (Queen).pdf",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AL_N20OFtqMrtU9yBN0Kg9Y/Crazy%20Little%20Thing%20Called%20Love/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANHW5AZ4fqBrBY-ZWg8XeB4/Crazy%20Little%20Thing%20Called%20Love/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ACd6eg4ebJdFq0O_eXZ4lOg/Crazy%20Little%20Thing%20Called%20Love/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AN9LF08olmS378AQgcRLkU4/Crazy%20Little%20Thing%20Called%20Love/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ABpP5StA6yNzi7BatXqNCvo/Crazy%20Little%20Thing%20Called%20Love/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFfodufC1jMJrv5Rf_l4VN8/Crazy%20Little%20Thing%20Called%20Love/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "blackbird",
@@ -125,9 +145,16 @@ window.SONGS = [
     artist: "Darius Rucker",
     key: "G",
     tempo: 80,
-    original: "audio/Wagon Wheel.m4a",
-    noDrums: "audio/Wagon Wheel (no drums).m4a",
-    chartPdf: "charts-pdf/wagon-wheel-old-crow-medicine-show-chart.pdf"
+    original: "audio/source/Wagon Wheel.m4a",
+    chartPdf: "charts-pdf/wagon-wheel-old-crow-medicine-show-chart.pdf",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGoxRIYemEFmxkQ3tXsiDVw/Wagon%20Wheel/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAUg13kpYgnhuPrlW94-IsQ/Wagon%20Wheel/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJEpZg_n-6Hx5ondNq-aWY8/Wagon%20Wheel/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AIPOo511LVR3GuoJ28CbnnY/Wagon%20Wheel/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJsGpH3_1lwxQm2esNFnjmA/Wagon%20Wheel/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANtYsMX0nxqIdAnWsYqvJRI/Wagon%20Wheel/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "hook",
@@ -152,10 +179,16 @@ window.SONGS = [
     title: "Just What I Needed",
     artist: "The Cars",
     key: "E",
-    original: "audio/Just What I Needed.m4a",
-    drumBass: null,
-    noDrums: null,
-    chartPdf: "charts-pdf/just what i needed official.pdf"
+    original: "audio/source/Just What I Needed.m4a",
+    chartPdf: "charts-pdf/just what i needed official.pdf",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AB1Fj1mQeE_tjXZHDIodXw4/Just%20What%20I%20Needed/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/APFg6lcq1t9gWbWQfh674Zw/Just%20What%20I%20Needed/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGDIE6C29a8p-q_bEcFCYxA/Just%20What%20I%20Needed/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKt8n3H-BLNYO4-Mby7Z3k0/Just%20What%20I%20Needed/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AP0CKhuEQz48qQL9PtunsuI/Just%20What%20I%20Needed/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/APiDmspcUTcL7fwat87oDgw/Just%20What%20I%20Needed/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
 
   /* --- Set 2 --- */
@@ -164,7 +197,7 @@ window.SONGS = [
     title: "I Gotta Feeling",
     artist: "Black Eyed Peas",
     key: "G",
-    original: "audio/I Gotta Feeling (Rock Remix).m4a",
+    original: "audio/old tracks/I Gotta Feeling (Rock Remix).m4a",
     drumBass: null,
     noDrums: null
   },
@@ -191,10 +224,16 @@ window.SONGS = [
     artist: "Men At Work",
     key: "Am",
     tempo: 96,
-    original: "audio/Down Under (Am).m4a",
-    drumBass: "audio/Down Under (drum + bass).m4a",
-    noDrums: "audio/Down Under (Am, no drums).m4a",
-    chartPdf: "charts-pdf/Down Under - Men at Work.pdf"
+    original: "audio/source/Down Under (Am).m4a",
+    chartPdf: "charts-pdf/Down Under - Men at Work.pdf",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AALj0mfaMfkXT1CNrIddl0Y/Down%20Under%20%28Am%29/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AHqCAHbdATzAfklbR5zBXbY/Down%20Under%20%28Am%29/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGrclWqJ1sa8Cyxh3nxNMJE/Down%20Under%20%28Am%29/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJVOwhloy18n0RAR-lMlYtQ/Down%20Under%20%28Am%29/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJhiCCeepvp7uPbiDrDIjH4/Down%20Under%20%28Am%29/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALOFjuV0UO8RQXSpU_RUW88/Down%20Under%20%28Am%29/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "be-my-girl",
@@ -202,19 +241,32 @@ window.SONGS = [
     artist: "Jet",
     key: "E",
     tempo: 210,
-    original: "audio/Be My Girl (Key of E).m4a",
-    drumBass: "audio/Be My Girl (Key of E, drum + bass).m4a",
-    noDrums: "audio/Be My Girl (Key of E, no drums).m4a",
-    chartPdf: "charts-pdf/are-you-gonna-be-my-girl-jet-chart.pdf"
+    original: "audio/source/Be My Girl (Key of E).m4a",
+    chartPdf: "charts-pdf/are-you-gonna-be-my-girl-jet-chart.pdf",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALAWo1A4FtdvYrSh7s4PkL0/Be%20My%20Girl%20%28Key%20of%20E%29/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AMy35lK_Q3vZZS2qx-ig8Xw/Be%20My%20Girl%20%28Key%20of%20E%29/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANbEt6ciKRlpcvLE8AWV71s/Be%20My%20Girl%20%28Key%20of%20E%29/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFNoDMEJvrhq8wl7hwC4GPk/Be%20My%20Girl%20%28Key%20of%20E%29/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ABeHKIR3uf4BJQ2W2laG5cE/Be%20My%20Girl%20%28Key%20of%20E%29/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALTBQCoM2mOJZkJWoXSeycQ/Be%20My%20Girl%20%28Key%20of%20E%29/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "eleanor-rigby",
     title: "Eleanor Rigby",
     artist: "Beatles",
     key: "Em",
-    drumBass: null,
-    noDrums: null,
-    chartPdf: "charts-pdf/eleanor-rigby-beatles-chart.pdf"
+    original: "audio/source/Eleanor Rigby.m4a",
+    chartPdf: "charts-pdf/eleanor-rigby-beatles-chart.pdf",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ADV7tlxLNk3p-EzL5cDtFFc/Eleanor%20Rigby/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFPRRLA2_8UowdF8cQvcHkA/Eleanor%20Rigby/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGcCydbfgdihyPkvsCKj4TM/Eleanor%20Rigby/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AI5HbEFrj6Y6x5UogfM7WyI/Eleanor%20Rigby/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AOYg3yNEBedUphkV6G0x3N4/Eleanor%20Rigby/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AMbOr7qCqI4tD0o49JO3nwU/Eleanor%20Rigby/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "aint-no-sunshine",
@@ -258,18 +310,16 @@ window.SONGS = [
     artist: "Cake",
     key: "Am",
     tempo: 92,
-    original: "audio/I Will Survive.m4a",
-    drumBass: "audio/I Will Survive (drum + bass).m4a",
-    noDrums: "audio/I Will Survive (no drums).m4a",
+    original: "audio/source/I Will Survive.m4a",
     chartPdf: "charts-pdf/I Will Survive.pdf",
     notes: "Reference: https://youtu.be/f9rCUQjmkxU?si=Hgi9fckZ4AxhJayr",
     stems: {
-      vocals: "audio/stems/i-will-survive/vocals.m4a",
-      drums:  "audio/stems/i-will-survive/drums.m4a",
-      bass:   "audio/stems/i-will-survive/bass.m4a",
-      guitar: "audio/stems/i-will-survive/guitar.m4a",
-      piano:  "audio/stems/i-will-survive/piano.m4a",
-      other:  "audio/stems/i-will-survive/other.m4a"
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ACoC8d7yojdnVpZnAQDadhU/I%20Will%20Survive/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AH_G2dSS-42Fk0lhOnlWqRM/I%20Will%20Survive/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFLDnTVmdE7uj-MLD40PNTM/I%20Will%20Survive/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AOksPsSyIIx46vM5OtU10bY/I%20Will%20Survive/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJ-c1OX9mX5GCWDBvJMu79M/I%20Will%20Survive/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKipG_9Sx7wtfj3vYEj5UMY/I%20Will%20Survive/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
     }
   },
   {
@@ -322,17 +372,15 @@ window.SONGS = [
     title: "Sultans of Swing",
     artist: "Dire Straits",
     key: "Dm",
-    original: "audio/Sultans of Swing.m4a",
-    drumBass: "audio/Sultans of Swing (drum + bass).m4a",
-    noDrums: "audio/Sultans of Swing (no drums).m4a",
+    original: "audio/source/Sultans of Swing.m4a",
     chartPdf: "charts-pdf/sultans of swing official.pdf",
     stems: {
-      vocals: "audio/stems/sultans-of-swing/vocals.m4a",
-      drums:  "audio/stems/sultans-of-swing/drums.m4a",
-      bass:   "audio/stems/sultans-of-swing/bass.m4a",
-      guitar: "audio/stems/sultans-of-swing/guitar.m4a",
-      piano:  "audio/stems/sultans-of-swing/piano.m4a",
-      other:  "audio/stems/sultans-of-swing/other.m4a"
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ACVnbBBIe5XYhPjDTu3hyYA/Sultans%20of%20Swing/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ABZC7GI4X5XFx9rLNVGbAVw/Sultans%20of%20Swing/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALNPlADeAI2tVruqXtXPuf0/Sultans%20of%20Swing/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ADNVrGbETo98UmbOjOhYRrc/Sultans%20of%20Swing/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/APqoKzcbo84dd-8J1g_RVyc/Sultans%20of%20Swing/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AL5wEAFNZjn6E7Fewy2RvnA/Sultans%20of%20Swing/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
     }
   },
   {
@@ -340,11 +388,17 @@ window.SONGS = [
     title: "Get Lucky (Martin Miller version)",
     artist: "Daft Punk",
     key: "Bm",
-    original: "audio/Get Lucky (Martin Miller Band).m4a",
-    drumBass: "audio/Get Lucky (Martin Miller Band, drum + bass).m4a",
-    noDrums: "audio/Get Lucky (Martin Miller Band, no drums).m4a",
+    original: "audio/source/Get Lucky (Martin Miller Band).m4a",
     chartPdf: "charts-pdf/Get Lucky - Daft Punk.pdf",
-    notes: "Reference: https://youtu.be/oPkaHxvxoso?si=GyZ9F9G-LiFmZBO-. Imported chart is the standard studio-recording chart, not the Martin Miller arrangement — treat as a rough reference only."
+    notes: "Reference: https://youtu.be/oPkaHxvxoso?si=GyZ9F9G-LiFmZBO-. Imported chart is the standard studio-recording chart, not the Martin Miller arrangement — treat as a rough reference only.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ABmuzfx_B7lUClKpMegMlHY/Get%20Lucky%20%28Martin%20Miller%20Band%29/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFkLZ5QEZB54EQ0DqKeQz9o/Get%20Lucky%20%28Martin%20Miller%20Band%29/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AD6Fj_dCDSHOy6C2EGuxN4w/Get%20Lucky%20%28Martin%20Miller%20Band%29/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGHWPx-7y3lHUFbshGknBXg/Get%20Lucky%20%28Martin%20Miller%20Band%29/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALFwam_ihnAoRMLXg4qBzGk/Get%20Lucky%20%28Martin%20Miller%20Band%29/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFKvPbaauXMIsKcUPVAFHTs/Get%20Lucky%20%28Martin%20Miller%20Band%29/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "rikki-dont-lose-that-number",
@@ -377,10 +431,143 @@ window.SONGS = [
     artist: "Black Pumas",
     key: "Em",
     tempo: 92,
-    original: "audio/Colors.m4a",
-    drumBass: "audio/Colors (Em, drum + bass).m4a",
-    noDrums: "audio/Colors (Em, no drums).m4a",
-    chartPdf: "charts-pdf/colors-black-pumas-chart.pdf"
+    original: "audio/source/Colors.m4a",
+    chartPdf: "charts-pdf/colors-black-pumas-chart.pdf",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALPJi6DWgUKfPnabC5TmVJs/Colors/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ADeN48WBGzlonBVj8Nl7WcI/Colors/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKUhpTKvan-jFFlhFTr5mic/Colors/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AC0H40lqZebXgrjW-9ciVa4/Colors/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANau8Bbkcw3jmVhbfzaZtjI/Colors/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AB76h9C2_qxC0XS4xsn0pEo/Colors/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
+  },
+
+  /* --- New songs, Nov 2026 (stems separated with Demucs) --- */
+  {
+    id: "taking-care-of-business",
+    title: "Taking Care of Business",
+    artist: "Bachman-Turner Overdrive",
+    key: "C",
+    tempo: 130,
+    original: "audio/source/Bachman Turner Overdrive-Taking care of business.mkv",
+    chartPdf: "charts-pdf/taking-care-of-business-bachman-turner-overdrive-chart.pdf",
+    notes: "Key assumed from the original recording, unconfirmed.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJYlZnT-TGmHpSikYKqZZBw/Bachman%20Turner%20Overdrive-Taking%20care%20of%20business/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AG4L7Vg2vIJ8cbDJhdPrcZg/Bachman%20Turner%20Overdrive-Taking%20care%20of%20business/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AEVqMZvVBM5JSzv7Sw4p6bc/Bachman%20Turner%20Overdrive-Taking%20care%20of%20business/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AMXpUazFHDuyWXES4oeLc6c/Bachman%20Turner%20Overdrive-Taking%20care%20of%20business/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AG5PmFISnjvgkQn2YRRxNgQ/Bachman%20Turner%20Overdrive-Taking%20care%20of%20business/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAfbqBjOUJReAXd4UoZrm_s/Bachman%20Turner%20Overdrive-Taking%20care%20of%20business/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
+  },
+  {
+    id: "drops-of-jupiter",
+    title: "Drops of Jupiter",
+    artist: "Train",
+    key: "C",
+    tempo: 80,
+    original: "audio/source/Drops of Jupiter.m4a",
+    chartPdf: "charts-pdf/drops-of-jupiter-train-chart.pdf",
+    notes: "Key inferred from chart, unconfirmed.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKLtLGKlXOSljAT19y5KxJ4/Drops%20of%20Jupiter/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ADkYLhwTD9T-nTUbebc-V5w/Drops%20of%20Jupiter/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFXT5v7W_ni_WZdTRFw2Fvw/Drops%20of%20Jupiter/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANeHEmpPa3O_srvqjJkNRk8/Drops%20of%20Jupiter/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGuS58qaV6w151ijoJnSTh8/Drops%20of%20Jupiter/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AEG6PMD45c90hX_CDf5rOHI/Drops%20of%20Jupiter/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
+  },
+  {
+    id: "how-it-is",
+    title: "How It Is",
+    artist: "Walk Off the Earth",
+    key: "Am",
+    original: "audio/source/How It Is.m4a",
+    chartPdf: "charts-pdf/how-it-is-walk-off-the-earth-chart.pdf",
+    notes: "Key inferred from chart, unconfirmed.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AEMr5OCgSlrO4VRja5NqPko/How%20It%20Is/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGAtFhNISZ5nCqNZxRD1H30/How%20It%20Is/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ADVZW54Ak-uBrtx7UdyyIKc/How%20It%20Is/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALXCQC1L088npZSUwwHL8v0/How%20It%20Is/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALxX2KDVeDFECIgxAvFQN8c/How%20It%20Is/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AIFOhO5Kj5zozmuJypeRW1w/How%20It%20Is/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
+  },
+  {
+    id: "rocket-man",
+    title: "Rocket Man",
+    artist: "Elton John",
+    key: "G",
+    original: "audio/source/Rocket Man (G).m4a",
+    chartPdf: "charts-pdf/rocket-man-elton-john-chart.pdf",
+    notes: "Played in G, but the chart PDF is in the original key of B♭ (down 3 semitones).",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFSzeGUS3Cx50m2DwYSuNBU/Rocket%20Man%20%28G%29/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AC7S9AJrDkU6BlvqOQUbsgc/Rocket%20Man%20%28G%29/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAy4k77-88ZhaVFcel4RIkE/Rocket%20Man%20%28G%29/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALPlYz5e_7GE2ISVrDNTjlE/Rocket%20Man%20%28G%29/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AI3mcJLTcm56OZ-2yzS0fDY/Rocket%20Man%20%28G%29/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAASUGCQuOcsrc5sUNFaCS0/Rocket%20Man%20%28G%29/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
+  },
+  {
+    id: "time",
+    title: "Time",
+    artist: "Pink Floyd",
+    key: "F♯m",
+    original: "audio/source/Time.m4a",
+    chartPdf: "charts-pdf/time-pink-floyd-chart.pdf",
+    notes: "Key inferred from chart, unconfirmed.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AB6a4RbepIBVZ1x0vKKIC18/Time/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAehr03gcd7BTBUdKu_xH-k/Time/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALGfP4CesT9o5i3sUVUC8oQ/Time/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFWhGsgDfW4h27fWkmzLFng/Time/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ADl05xvTaQUp_uKPH-Dp1KQ/Time/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AOwGJe8RgsZP2Wazhr3bPbU/Time/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
+  },
+  {
+    id: "tubthumping",
+    title: "Tubthumping",
+    artist: "Chumbawamba",
+    key: "D",
+    tempo: 104,
+    original: "audio/source/Tubthumping.m4a",
+    chartPdf: "charts-pdf/tubthumping-chumbawumba-chart.pdf",
+    notes: "Key inferred from chart, unconfirmed.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANuoohelXLnWzwNeNtQb1mw/Tubthumping/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AHt1E_me4BEIOxBS7r5rZio/Tubthumping/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ACPDPg2HPb9aJXRbuCv0pKQ/Tubthumping/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AEEB93_B7XPxoxPSAbz4Tbw/Tubthumping/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AHIHzQ_xdPBglAF26Oqpd80/Tubthumping/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFXXoll2qo4APA12rSFiK1M/Tubthumping/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
+  },
+  {
+    id: "people-get-ready",
+    title: "People Get Ready",
+    artist: "Jeff Beck",
+    key: "D",
+    drumBass: null,
+    noDrums: null,
+    chartPdf: "charts-pdf/people-get-ready-jeff-beck-chart.pdf",
+    notes: "Key inferred from chart (final verse modulates up to E), unconfirmed."
+  },
+  {
+    id: "while-my-guitar-gently-weeps",
+    title: "While My Guitar Gently Weeps",
+    artist: "The Beatles",
+    key: "Am",
+    drumBass: null,
+    noDrums: null,
+    chartPdf: "charts-pdf/while-my-guitar-gently-weeps-the-beatles-chart.pdf",
+    notes: "Key inferred from chart, unconfirmed."
   },
 
   /* --- Imported charts, not yet assigned to a set ---
