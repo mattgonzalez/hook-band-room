@@ -197,9 +197,15 @@ window.SONGS = [
     title: "I Gotta Feeling",
     artist: "Black Eyed Peas",
     key: "G",
-    original: "audio/old tracks/I Gotta Feeling (Rock Remix).m4a",
-    drumBass: null,
-    noDrums: null
+    original: "audio/source/The Black Eyed Peas - I Gotta Feeling Official Music Video.wav",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFX5hXyXXF157jTpeqXe6is/I%20Gotta%20Feeling/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJXHOWCfUTBIq5CNk77HtE0/I%20Gotta%20Feeling/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AA8-xcBqXKJLvfTFho7Ilnc/I%20Gotta%20Feeling/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/APu640zEqWgrGP2OxBqUkFM/I%20Gotta%20Feeling/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AO0eBMYlifrloKOBIP81WHc/I%20Gotta%20Feeling/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AEfd30j6XxTgkqs5y_5vL4M/I%20Gotta%20Feeling/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "keep-your-hands-to-yourself",
