@@ -504,7 +504,7 @@ window.SONGS = [
     key: "G",
     original: "audio/source/Rocket Man (G).m4a",
     chartPdf: "charts-pdf/rocket-man-elton-john-chart.pdf",
-    notes: "Played in G, but the chart PDF is in the original key of B♭ (down 3 semitones).",
+    notes: "Played in G (original is B♭).",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFSzeGUS3Cx50m2DwYSuNBU/Rocket%20Man%20%28G%29/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AC7S9AJrDkU6BlvqOQUbsgc/Rocket%20Man%20%28G%29/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
