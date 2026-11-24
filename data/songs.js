@@ -43,6 +43,7 @@ window.SONGS = [
  title: "Fly Like An Eagle",
  artist: "Steve Miller Band",
  key: "Am",
+ tempo: 100,
  original: "audio/source/Fly Like an Eagle (Playing For Change).m4a",
  chartPdf: "charts-pdf/fly-like-an-eagle-steve-miller-band-chart.pdf",
  stems: {
@@ -77,6 +78,7 @@ window.SONGS = [
     title: "Mrs. Robinson",
     artist: "Lemonheads",
     key: "E & G",
+    tempo: 108,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Mrs-Robinson.pdf"
@@ -103,6 +105,7 @@ window.SONGS = [
     title: "Blackbird",
     artist: "Beatles",
     key: "G",
+    tempo: 94,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/blackbird-beatles-chart.pdf"
@@ -112,6 +115,7 @@ window.SONGS = [
     title: "Fire and Rain",
     artist: "James Taylor",
     key: "C",
+    tempo: 75,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Fire and Rain.pdf"
@@ -121,6 +125,7 @@ window.SONGS = [
     title: "Killing Me Softly",
     artist: "Fugees",
     key: "Em",
+    tempo: 92,
     drumBass: null,
     noDrums: null
   },
@@ -129,6 +134,7 @@ window.SONGS = [
     title: "Moondance",
     artist: "Van Morrison",
     key: "Am",
+    tempo: 131,
     drumBass: null,
     noDrums: null
   },
@@ -137,6 +143,7 @@ window.SONGS = [
     title: "I Still Haven't Found What I'm Looking For",
     artist: "U2",
     key: "A",
+    tempo: 101,
     drumBass: null,
     noDrums: null
   },
@@ -162,6 +169,7 @@ window.SONGS = [
     title: "Hook",
     artist: "Blues Traveler",
     key: "G",
+    tempo: 83,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Hook - Blues Traveler.pdf"
@@ -171,6 +179,7 @@ window.SONGS = [
     title: "Two Tickets to Paradise",
     artist: "Eddie Money",
     key: "A",
+    tempo: 130,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/two-tickets-to-paradise-eddie-money-chart.pdf"
@@ -180,6 +189,7 @@ window.SONGS = [
     title: "Just What I Needed",
     artist: "The Cars",
     key: "E",
+    tempo: 128,
     original: "audio/source/Just What I Needed.m4a",
     chartPdf: "charts-pdf/just what i needed official.pdf",
     stems: {
@@ -198,6 +208,7 @@ window.SONGS = [
     title: "I Gotta Feeling",
     artist: "Black Eyed Peas",
     key: "G",
+    tempo: 128,
     original: "audio/source/The Black Eyed Peas - I Gotta Feeling Official Music Video.wav",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFX5hXyXXF157jTpeqXe6is/I%20Gotta%20Feeling/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
@@ -229,6 +240,7 @@ window.SONGS = [
     title: "Crazy",
     artist: "Gnarls Barkley",
     key: "Cm",
+    tempo: 112,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Crazy - Gnarls Barkley.pdf"
@@ -272,6 +284,7 @@ window.SONGS = [
     title: "Eleanor Rigby",
     artist: "Beatles",
     key: "Em",
+    tempo: 137,
     original: "audio/source/Eleanor Rigby.m4a",
     chartPdf: "charts-pdf/eleanor-rigby-beatles-chart.pdf",
     stems: {
@@ -288,6 +301,7 @@ window.SONGS = [
     title: "Ain't No Sunshine",
     artist: "Bill Withers",
     key: "Am",
+    tempo: 79,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Ain't No Sunshine - Bill Withers.pdf"
@@ -297,6 +311,7 @@ window.SONGS = [
     title: "Hello",
     artist: "Adele",
     key: "Em",
+    tempo: 79,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/hello-adele-chart.pdf"
@@ -306,6 +321,7 @@ window.SONGS = [
     title: "Lights",
     artist: "Journey",
     key: "D",
+    tempo: 69,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/lights-journey-chart.pdf"
@@ -315,6 +331,7 @@ window.SONGS = [
     title: "Lovin' Touchin' Squeezin'",
     artist: "Journey",
     key: "E",
+    tempo: 71,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/lovin-touchin-squeezin-journey-chart.pdf"
@@ -342,6 +359,7 @@ window.SONGS = [
     title: "Come Together",
     artist: "Beatles",
     key: "Dm",
+    tempo: 82,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/come-together-beatles-chart.pdf"
@@ -353,6 +371,7 @@ window.SONGS = [
     title: "You Wreck Me",
     artist: "Tom Petty",
     key: "E",
+    tempo: 164,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/You Wreck Me - Tom Petty.pdf",
@@ -363,6 +382,7 @@ window.SONGS = [
     title: "SexyBack",
     artist: "Justin Timberlake",
     key: "Am",
+    tempo: 117,
     drumBass: null,
     noDrums: null
   },
@@ -370,6 +390,7 @@ window.SONGS = [
     id: "make-you-feel-my-love",
     title: "Make You Feel My Love",
     key: "G",
+    tempo: 72,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Make You Feel My Love.pdf"
@@ -379,6 +400,7 @@ window.SONGS = [
     title: "Free Fallin'",
     artist: "Tom Petty",
     key: "F",
+    tempo: 84,
     drumBass: null,
     noDrums: null
   },
@@ -387,6 +409,7 @@ window.SONGS = [
     title: "Sultans of Swing",
     artist: "Dire Straits",
     key: "Dm",
+    tempo: 148,
     original: "audio/source/Sultans of Swing.m4a",
     chartPdf: "charts-pdf/sultans of swing official.pdf",
     stems: {
@@ -403,6 +426,7 @@ window.SONGS = [
     title: "Get Lucky (Martin Miller version)",
     artist: "Daft Punk",
     key: "Bm",
+    tempo: 116,
     original: "audio/source/Get Lucky (Martin Miller Band).m4a",
     chartPdf: "charts-pdf/Get Lucky - Daft Punk.pdf",
     notes: "Reference: https://youtu.be/oPkaHxvxoso?si=GyZ9F9G-LiFmZBO-. Imported chart is the standard studio-recording chart, not the Martin Miller arrangement — treat as a rough reference only.",
@@ -420,6 +444,7 @@ window.SONGS = [
     title: "Rikki Don't Lose That Number",
     artist: "Steely Dan",
     key: "Em",
+    tempo: 117,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/rikki-steely-dan-chart.pdf"
@@ -429,6 +454,7 @@ window.SONGS = [
     title: "Tennessee Whiskey",
     artist: "Chris Stapleton",
     key: "A",
+    tempo: 50,
     drumBass: null,
     noDrums: null
   },
@@ -437,6 +463,7 @@ window.SONGS = [
     title: "Valerie",
     artist: "Amy Winehouse",
     key: "E♭",
+    tempo: 106,
     drumBass: null,
     noDrums: null
   },
@@ -517,6 +544,7 @@ window.SONGS = [
     title: "Rocket Man",
     artist: "Elton John",
     key: "G",
+    tempo: 136,
     original: "audio/source/Rocket Man (G).m4a",
     chartPdf: "charts-pdf/rocket-man-elton-john-chart.pdf",
     notes: "Played in G (original is B♭).",
@@ -534,6 +562,7 @@ window.SONGS = [
     title: "Time",
     artist: "Pink Floyd",
     key: "F♯m",
+    tempo: 123,
     original: "audio/source/Time.m4a",
     chartPdf: "charts-pdf/time-pink-floyd-chart.pdf",
     notes: "Key inferred from chart, unconfirmed.",
@@ -569,6 +598,7 @@ window.SONGS = [
     title: "People Get Ready",
     artist: "Jeff Beck",
     key: "D",
+    tempo: 72,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/people-get-ready-jeff-beck-chart.pdf",
@@ -579,6 +609,7 @@ window.SONGS = [
     title: "While My Guitar Gently Weeps",
     artist: "The Beatles",
     key: "Am",
+    tempo: 116,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/while-my-guitar-gently-weeps-the-beatles-chart.pdf",
@@ -594,6 +625,7 @@ window.SONGS = [
     title: "It's the End of the World",
     artist: "R.E.M.",
     key: "G",
+    tempo: 103,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/It's the End of the World - R.E.M..pdf",
@@ -624,6 +656,7 @@ window.SONGS = [
     title: "Modern Love",
     artist: "David Bowie",
     key: "D",
+    tempo: 182,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Modern Love - David Bowie.pdf",
@@ -654,6 +687,7 @@ window.SONGS = [
     title: "Dancing Queen",
     artist: "ABBA",
     key: "A",
+    tempo: 101,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Dancing Queen - ABBA.pdf",
@@ -684,6 +718,7 @@ window.SONGS = [
     title: "Superstition",
     artist: "Stevie Wonder",
     key: "Em",
+    tempo: 100,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Superstition - Stevie Wonder.pdf",
@@ -732,6 +767,7 @@ window.SONGS = [
     title: "Ocean Eyes",
     artist: "Billie Eilish",
     key: "C",
+    tempo: 145,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/ocean eyes.pdf",
@@ -742,6 +778,7 @@ window.SONGS = [
     title: "Let Her Go",
     artist: "Passenger",
     key: "C",
+    tempo: 75,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Let Her Go - Passenger.pdf",
@@ -822,6 +859,7 @@ window.SONGS = [
     title: "Ex's & Oh's",
     artist: "Elle King",
     key: "Em",
+    tempo: 140,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Ex's & Oh's - Elle King.pdf",
@@ -842,6 +880,7 @@ window.SONGS = [
     title: "Just the Two of Us",
     artist: "Bill Withers",
     key: "E♭",
+    tempo: 96,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Just the Two of Us - Bill Withers.pdf",
@@ -852,6 +891,7 @@ window.SONGS = [
     title: "Everybody Wants to Rule the World",
     artist: "Tears for Fears",
     key: "D",
+    tempo: 112,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Everybody Wants to Rule the World - D.pdf",
@@ -932,6 +972,7 @@ window.SONGS = [
     title: "Rock This Town",
     artist: "Stray Cats",
     key: "D",
+    tempo: 100,
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Rock This Town - Stray Cats.pdf",
@@ -961,6 +1002,7 @@ window.SONGS = [
     title: "Use Me",
     artist: "Bill Withers",
     key: "Em",
+    tempo: 78,
     chartPdf: "charts-pdf/use-me-bill-withers-chart.pdf",
     notes: "Added for the Nov 28 setlist.",
     stems: {
@@ -994,6 +1036,7 @@ window.SONGS = [
     title: "Rolling in the Deep",
     artist: "Adele",
     key: "Am",
+    tempo: 105,
     notes: "Added for the Nov 28 setlist. Chart still to come.",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AG148cYlCLCJsB5oV_Z4m-w/Rolling%20in%20the%20Deep%20%28Am%29/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
@@ -1039,6 +1082,7 @@ window.SONGS = [
     id: "lets-stay-together",
     title: "Let's Stay Together",
     artist: "Al Green",
+    tempo: 102,
     notes: "Key and chart still to come.",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGQffvpavGnOTh5HIcVFHQ4/Let%27s%20Stay%20Together/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
