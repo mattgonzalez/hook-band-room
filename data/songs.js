@@ -961,10 +961,16 @@ window.SONGS = [
     title: "Use Me",
     artist: "Bill Withers",
     key: "Em",
-    drumBass: null,
-    noDrums: null,
     chartPdf: "charts-pdf/use-me-bill-withers-chart.pdf",
-    notes: "Added for the Nov 28 setlist. Audio still to come."
+    notes: "Added for the Nov 28 setlist.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AClIMFdGIfbwYtLm_e3oYq0/Use%20Me/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AA9EFeAFLuOXF3FTB3cwfcU/Use%20Me/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AK02M32X5nJ7cgjEwcH3CB4/Use%20Me/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANgfTP9Ja5oD8Abof7D_9Oo/Use%20Me/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKTkvYeitGNCwj6mIOQngbE/Use%20Me/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALkI5GgTgaKPamIUSWDsJcY/Use%20Me/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "wicked-game",
@@ -972,10 +978,16 @@ window.SONGS = [
     artist: "Chris Isaak",
     key: "Bm",
     tempo: 112,
-    drumBass: null,
-    noDrums: null,
     chartPdf: "charts-pdf/wicked-game-chris-isaak-chart.pdf",
-    notes: "Added for the Nov 28 setlist. Audio still to come."
+    notes: "Added for the Nov 28 setlist.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AOqQN80ssL81Ib0qfFrPfGI/Wicked%20Game/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALX-rpwvNo5W_vKjE989QcE/Wicked%20Game/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGMHyQFj09L0FecS7Q4QXis/Wicked%20Game/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALonEqEe0oJg8j4xZTzTBmU/Wicked%20Game/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AC3YsZpwPZ36_vDODj73A2c/Wicked%20Game/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AEWQnM_2DQc0UTKDTkB92Io/Wicked%20Game/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "rolling-in-the-deep",
