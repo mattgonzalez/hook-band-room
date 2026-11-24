@@ -69,7 +69,8 @@ window.SONGS = [
       guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ACWcHr3MPQiUcrXJGfIpLEw/Goin%27%20Down/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFQvyN-AKoALOVMMtoKLBGg/Goin%27%20Down/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AMTatFo4X-HOq2i7bg19zAc/Goin%27%20Down/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
-    }
+    },
+    chartPdf: "charts-pdf/goin-down-freddie-king-chart.pdf"
   },
   {
     id: "mrs-robinson",
@@ -212,8 +213,10 @@ window.SONGS = [
     title: "Keep Your Hands to Yourself",
     artist: "Georgia Satellites",
     key: "A",
+    tempo: 115,
     drumBass: null,
-    noDrums: null
+    noDrums: null,
+    chartPdf: "charts-pdf/keep-your-hands-to-yourself-georgia-satellites-chart.pdf"
   },
   {
     id: "crazy",
@@ -934,25 +937,33 @@ window.SONGS = [
     id: "lovely-day",
     title: "Lovely Day",
     artist: "Bill Withers",
+    key: "E",
+    tempo: 98,
     drumBass: null,
     noDrums: null,
-    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+    chartPdf: "charts-pdf/lovely-day-bill-withers-chart.pdf",
+    notes: "Added for the Nov 28 setlist. Audio still to come."
   },
   {
     id: "use-me",
     title: "Use Me",
     artist: "Bill Withers",
+    key: "Em",
     drumBass: null,
     noDrums: null,
-    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+    chartPdf: "charts-pdf/use-me-bill-withers-chart.pdf",
+    notes: "Added for the Nov 28 setlist. Audio still to come."
   },
   {
     id: "wicked-game",
     title: "Wicked Game",
     artist: "Chris Isaak",
+    key: "Bm",
+    tempo: 112,
     drumBass: null,
     noDrums: null,
-    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+    chartPdf: "charts-pdf/wicked-game-chris-isaak-chart.pdf",
+    notes: "Added for the Nov 28 setlist. Audio still to come."
   },
   {
     id: "rolling-in-the-deep",
@@ -966,9 +977,12 @@ window.SONGS = [
     id: "miss-you",
     title: "Miss You",
     artist: "The Rolling Stones",
+    key: "Am",
+    tempo: 110,
     drumBass: null,
     noDrums: null,
-    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+    chartPdf: "charts-pdf/miss-you-rolling-stones-chart.pdf",
+    notes: "Added for the Nov 28 setlist. Am7 / Dm7 groove, 2 bars each; F Em7 Dm7 bridge. Bar counts are best guesses from the album version. Audio still to come."
   },
   {
     id: "gidget",

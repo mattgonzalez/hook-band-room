@@ -48,6 +48,52 @@ Em                         Dm
              Am    Em G   Am
 (lyrics)
 
-{c: Ends cold on Am}`
+{c: Ends cold on Am}`,
+
+  "miss-you": `{c: Am, about 110 bpm. Main groove: 2 bars Am7, 2 bars Dm7. Bar counts are best guesses.}
+
+[Intro]
+{c: harmonica + groove, 2x}
+Am7 | Am7 | Dm7 | Dm7
+
+[Verse 1]
+{c: 4x}
+Am7 | Am7 | Dm7 | Dm7
+
+[Hook]
+{c: "ooh ooh" falsetto, 2x}
+Am7 | Am7 | Dm7 | Dm7
+
+[Verse 2]
+{c: 4x}
+Am7 | Am7 | Dm7 | Dm7
+
+[Hook]
+{c: 2x}
+Am7 | Am7 | Dm7 | Dm7
+
+[Bridge]
+F | Em7 | Dm7 | Dm7
+F | Em7 | Dm7 | E7
+
+[Sax Solo]
+{c: 4x}
+Am7 | Am7 | Dm7 | Dm7
+
+[Spoken Section]
+{c: over the groove, band drops down, 4x}
+Am7 | Am7 | Dm7 | Dm7
+
+[Verse 3]
+{c: 4x}
+Am7 | Am7 | Dm7 | Dm7
+
+[Hook]
+{c: 2x}
+Am7 | Am7 | Dm7 | Dm7
+
+[Outro]
+{c: "ooh ooh" + harmonica vamp, cue the end, land on Am7}
+Am7 | Am7 | Dm7 | Dm7`
 
 };
