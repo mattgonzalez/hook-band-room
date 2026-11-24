@@ -796,8 +796,7 @@ window.SONGS = [
     key: "Cm",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Sweet Dreams - Seven Nation Army.pdf",
-    notes: "Title/artist inferred from filename — verify this is the intended mashup arrangement."
+    chartPdf: "charts-pdf/Sweet Dreams - Seven Nation Army.pdf"
   },
   {
     id: "back-on-the-chain-gang",
@@ -863,8 +862,7 @@ window.SONGS = [
     tempo: 112,
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Everybody Wants to Rule the World - D.pdf",
-    notes: "Source filename was truncated (\"- D.pdf\") — artist inferred, please verify."
+    chartPdf: "charts-pdf/Everybody Wants to Rule the World - D.pdf"
   },
   {
     id: "love-letter",
@@ -927,8 +925,7 @@ window.SONGS = [
     key: "C",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/You Can Leave Your Hat On.pdf",
-    notes: "Artist not printed on chart, filled in from common knowledge — please verify."
+    chartPdf: "charts-pdf/You Can Leave Your Hat On.pdf"
   },
   {
     id: "rock-this-town",
