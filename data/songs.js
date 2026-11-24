@@ -214,9 +214,15 @@ window.SONGS = [
     artist: "Georgia Satellites",
     key: "A",
     tempo: 115,
-    drumBass: null,
-    noDrums: null,
-    chartPdf: "charts-pdf/keep-your-hands-to-yourself-georgia-satellites-chart.pdf"
+    chartPdf: "charts-pdf/keep-your-hands-to-yourself-georgia-satellites-chart.pdf",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AD1ucZhrcUiC-3W39rtD47E/Keep%20Your%20Hands%20to%20Yourself/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AOfFylrwzK7cg276JEp0tSs/Keep%20Your%20Hands%20to%20Yourself/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AEXUhO6u0elbmsJqZHTV_pw/Keep%20Your%20Hands%20to%20Yourself/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AF1RhcEYIbNxfAPLFX7IktY/Keep%20Your%20Hands%20to%20Yourself/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AD2b1vbwdWby7QVeYRFd16I/Keep%20Your%20Hands%20to%20Yourself/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANEcs0UCJ-Pk8Pyjq2435JI/Keep%20Your%20Hands%20to%20Yourself/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "crazy",
@@ -939,10 +945,16 @@ window.SONGS = [
     artist: "Bill Withers",
     key: "E",
     tempo: 98,
-    drumBass: null,
-    noDrums: null,
     chartPdf: "charts-pdf/lovely-day-bill-withers-chart.pdf",
-    notes: "Added for the Nov 28 setlist. Audio still to come."
+    notes: "Added for the Nov 28 setlist.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAbU1oOD-1PeWY-D2DJ9-js/Lovely%20Day/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AHfl7GOjj7LL02TbyOb7Fsc/Lovely%20Day/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AMet33Pjt7Kv3lxY0mlWY2I/Lovely%20Day/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AARDk4-B5hog83eoz1Y6FYw/Lovely%20Day/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJ8I2FecGaE9dAp2oMZcbQc/Lovely%20Day/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAZbrCSE0gmusbAcdaWlDdI/Lovely%20Day/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "use-me",
@@ -969,9 +981,16 @@ window.SONGS = [
     id: "rolling-in-the-deep",
     title: "Rolling in the Deep",
     artist: "Adele",
-    drumBass: null,
-    noDrums: null,
-    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+    key: "Am",
+    notes: "Added for the Nov 28 setlist. Chart still to come.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AG148cYlCLCJsB5oV_Z4m-w/Rolling%20in%20the%20Deep%20%28Am%29/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKmcwFS9ZYMWTPwpoA9rwAs/Rolling%20in%20the%20Deep%20%28Am%29/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGX-ko-osoKAEeqzqHay_v4/Rolling%20in%20the%20Deep%20%28Am%29/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AHNhreK8DFs90eatQJXIlw8/Rolling%20in%20the%20Deep%20%28Am%29/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AElZODPOEYm1Dv2ykEi-wOg/Rolling%20in%20the%20Deep%20%28Am%29/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AOAhiTFeIrHCSFCGgG2vwo4/Rolling%20in%20the%20Deep%20%28Am%29/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "miss-you",
@@ -979,17 +998,43 @@ window.SONGS = [
     artist: "The Rolling Stones",
     key: "Am",
     tempo: 110,
-    drumBass: null,
-    noDrums: null,
     chartPdf: "charts-pdf/miss-you-rolling-stones-chart.pdf",
-    notes: "Added for the Nov 28 setlist. Am7 / Dm7 groove, 2 bars each; F Em7 Dm7 bridge. Bar counts are best guesses from the album version. Audio still to come."
+    notes: "Added for the Nov 28 setlist. Am7 / Dm7 groove, 2 bars each; F Em7 Dm7 bridge. Bar counts are best guesses from the album version.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALo--espUIymQFPrT5CBLE0/Miss%20You/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGRotOxGSdu-SF1XnJd7P70/Miss%20You/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAzX3GDniBmKOQVUTSC7H1M/Miss%20You/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AL6Ed_uwShJBnCW9E4ern70/Miss%20You/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AB4wdzNs6AsLj5zTHJbgvQ4/Miss%20You/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANJlVf60A7Sm4YVL9-AwDo4/Miss%20You/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "gidget",
     title: "Gidget",
     artist: "Free Nationals",
-    drumBass: null,
-    noDrums: null,
-    notes: "Added for the Nov 28 setlist. Key, chart and audio still to come."
+    notes: "Added for the Nov 28 setlist. Key and chart still to come.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKn8DhlZtgfol2vjCvwTvgg/Gidget/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFh3t-ALBjvbN9ON3kzzTh4/Gidget/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKg5VrrcbAl31LAdzQ6JZrM/Gidget/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKBK00uM7WiDTxx9PZ_O5cY/Gidget/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJXVgoPg_fSp7x-txqSXx28/Gidget/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAf1xRklzj2p91CmGf21lGk/Gidget/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
+  },
+  {
+    id: "lets-stay-together",
+    title: "Let's Stay Together",
+    artist: "Al Green",
+    notes: "Key and chart still to come.",
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGQffvpavGnOTh5HIcVFHQ4/Let%27s%20Stay%20Together/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AHKtQyoE38ZQiaiUVIAceZo/Let%27s%20Stay%20Together/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKgqKfrTadEmg1c7pXnalWs/Let%27s%20Stay%20Together/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALXx8T0qpYAjqfmLdKJzHA0/Let%27s%20Stay%20Together/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAMZWMaZoRL_qlOtM5ZzX88/Let%27s%20Stay%20Together/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ADsgnYiEMm_ZxCg8g7RQuOU/Let%27s%20Stay%20Together/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   }
 ];
