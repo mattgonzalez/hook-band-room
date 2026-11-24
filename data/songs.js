@@ -1048,5 +1048,13 @@ window.SONGS = [
       piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAMZWMaZoRL_qlOtM5ZzX88/Let%27s%20Stay%20Together/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ADsgnYiEMm_ZxCg8g7RQuOU/Let%27s%20Stay%20Together/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
     }
+  },
+  {
+    id: "wish-you-were-here",
+    title: "Wish You Were Here",
+    artist: "Pink Floyd",
+    key: "G",
+    tempo: 60,
+    notes: "Chords-only chart; bar counts are best guesses from the album version. Same chart is in charts-chordsheet/wish-you-were-here-pink-floyd.txt for pasting into chordsheet.com."
   }
 ];

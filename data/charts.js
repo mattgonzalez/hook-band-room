@@ -94,6 +94,41 @@ Am7 | Am7 | Dm7 | Dm7
 
 [Outro]
 {c: "ooh ooh" + harmonica vamp, cue the end, land on Am7}
-Am7 | Am7 | Dm7 | Dm7`
+Am7 | Am7 | Dm7 | Dm7`,
+
+  "wish-you-were-here": `{c: G, about 60 bpm, 4/4. Chords and section cues only. Bar counts are best guesses from the album version.}
+
+[Intro]
+{c: 12-string riff (radio sound on the record), then acoustic lead over the same changes, 2x}
+Em7 | G | Em7 | G
+Em7 | A7sus4 | Em7 | A7sus4 | G | G
+
+[Verse 1]
+C | D/F# | Am/E | G
+D/F# | C | Am | G
+
+[Interlude]
+{c: riff changes, no solo}
+Em7 | G | Em7 | G
+Em7 | A7sus4 | Em7 | A7sus4 | G | G
+
+[Verse 2]
+C | D/F# | Am/E | G
+D/F# | C | Am | G
+
+[Solo]
+{c: acoustic lead over the riff changes, 2x}
+Em7 | G | Em7 | G
+Em7 | A7sus4 | Em7 | A7sus4 | G | G
+
+[Verse 3]
+{c: same changes, 2x}
+C | D/F# | Am/E | G
+D/F# | C | Am | G
+
+[Outro]
+{c: lead + wordless vocal over the riff changes, repeat and fade or end on G}
+Em7 | G | Em7 | G
+Em7 | A7sus4 | Em7 | A7sus4 | G | G`
 
 };
