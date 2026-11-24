@@ -831,7 +831,7 @@
       const items = set.songs.map(sid => {
         const s = SONGS.find(x => x.id === sid);
         return s
-          ? `<li><a href="#/song/${encodeURIComponent(s.id)}">${escapeHtml(s.title)}</a><span class="set-key">${escapeHtml(s.key || "")}</span></li>`
+          ? `<li><a href="#/song/${encodeURIComponent(s.id)}">${escapeHtml(s.title)}</a><span class="set-key">${escapeHtml(s.key || "")}</span>${s.tempo ? `<span class="set-tempo">${escapeHtml(String(s.tempo))} bpm</span>` : ""}</li>`
           : `<li>${escapeHtml(sid)}</li>`;
       }).join("");
       return `<div class="set">

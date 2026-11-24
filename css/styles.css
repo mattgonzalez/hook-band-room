@@ -339,6 +339,7 @@ a.tool-link:hover { text-decoration: underline; }
 .setlist li a { color: var(--ink); text-decoration: underline; }
 .setlist li a:hover { color: var(--accent); }
 .setlist .set-key { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-left: 6px; }
+.setlist .set-tempo { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-left: 6px; }
 
 /* ---------- Player bar ---------- */
 .player-bar {
