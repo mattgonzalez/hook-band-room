@@ -59,7 +59,7 @@ window.SONGS = [
     id: "goin-down",
     title: "Goin' Down",
     artist: "Jeff Beck",
-    key: "C",
+    key: "D",
     tempo: 90,
     original: "audio/source/Goin' Down.m4a",
     stems: {
