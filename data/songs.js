@@ -585,10 +585,7 @@ window.SONGS = [
     notes: "Key inferred from chart, unconfirmed."
   },
 
-  /* --- Imported charts, not yet assigned to a set ---
-     Keys below are inferred from the chords printed on each imported
-     PDF, not confirmed by the band — verify before gigging any of
-     these. */
+  /* --- Imported charts, not yet assigned to a set --- */
   {
     id: "its-the-end-of-the-world",
     title: "It's the End of the World",
@@ -596,8 +593,7 @@ window.SONGS = [
     key: "G",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/It's the End of the World - R.E.M..pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/It's the End of the World - R.E.M..pdf"
   },
   {
     id: "la-isla-bonita",
@@ -606,8 +602,7 @@ window.SONGS = [
     key: "C♯m",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/La Isla Bonita - Madonna.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/La Isla Bonita - Madonna.pdf"
   },
   {
     id: "listen-to-the-music",
@@ -616,18 +611,16 @@ window.SONGS = [
     key: "D",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Listen to the Music.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Listen to the Music.pdf"
   },
   {
     id: "modern-love",
     title: "Modern Love",
     artist: "David Bowie",
-    key: "D",
+    key: "C",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Modern Love - David Bowie.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Modern Love - David Bowie.pdf"
   },
   {
     id: "i-wanna-dance-with-somebody",
@@ -636,8 +629,7 @@ window.SONGS = [
     key: "G♭",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/I Wanna Dance With Somebody - Whitney Houston.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/I Wanna Dance With Somebody - Whitney Houston.pdf"
   },
   {
     id: "i-cant-go-for-that",
@@ -647,7 +639,7 @@ window.SONGS = [
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/I Can't Go For That.pdf",
-    notes: "Artist billing as printed on the chart (mashup arrangement) — key inferred from chart, unconfirmed."
+    notes: "Artist billing as printed on the chart (mashup arrangement)."
   },
   {
     id: "dancing-queen",
@@ -656,8 +648,7 @@ window.SONGS = [
     key: "A",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Dancing Queen - ABBA.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Dancing Queen - ABBA.pdf"
   },
   {
     id: "aint-nobody",
@@ -666,8 +657,7 @@ window.SONGS = [
     key: "E♭m",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Ain't Nobody - Chaka Khan.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Ain't Nobody - Chaka Khan.pdf"
   },
   {
     id: "i-heard-it-through-the-grapevine",
@@ -676,8 +666,7 @@ window.SONGS = [
     key: "C",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/I Heard It Through the Grapevine - Gladys Knight and the Pips.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/I Heard It Through the Grapevine - Gladys Knight and the Pips.pdf"
   },
   {
     id: "superstition",
@@ -686,8 +675,7 @@ window.SONGS = [
     key: "Em",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Superstition - Stevie Wonder.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Superstition - Stevie Wonder.pdf"
   },
   {
     id: "blue-skies",
@@ -705,8 +693,7 @@ window.SONGS = [
     key: "G",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Mercy - Duffy.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Mercy - Duffy.pdf"
   },
   {
     id: "take-the-money-and-run",
@@ -715,8 +702,7 @@ window.SONGS = [
     key: "G",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Take The Money and Run - Steve Miller Band.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Take The Money and Run - Steve Miller Band.pdf"
   },
   {
     id: "the-river-of-dreams",
@@ -734,18 +720,16 @@ window.SONGS = [
     key: "C",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/ocean eyes.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/ocean eyes.pdf"
   },
   {
     id: "let-her-go",
     title: "Let Her Go",
     artist: "Passenger",
-    key: "C",
+    key: "Em",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Let Her Go - Passenger.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Let Her Go - Passenger.pdf"
   },
   {
     id: "ill-be-there",
@@ -754,8 +738,7 @@ window.SONGS = [
     key: "F♯m",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/I'll Be There - Walk Off the Earth.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/I'll Be There - Walk Off the Earth.pdf"
   },
   {
     id: "drowning-in-the-sea-of-love",
@@ -764,8 +747,7 @@ window.SONGS = [
     key: "Cm",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Drowning in the Sea of Love - Eva Cassidy.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Drowning in the Sea of Love - Eva Cassidy.pdf"
   },
   {
     id: "love-sneakin-up-on-you",
@@ -774,8 +756,7 @@ window.SONGS = [
     key: "D",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Love Sneakin' Up On You - Bonnie Raitt.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Love Sneakin' Up On You - Bonnie Raitt.pdf"
   },
   {
     id: "sweet-dreams-seven-nation-army",
@@ -785,7 +766,7 @@ window.SONGS = [
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Sweet Dreams - Seven Nation Army.pdf",
-    notes: "Title/artist inferred from filename — verify this is the intended mashup arrangement. Key inferred from chart, unconfirmed."
+    notes: "Title/artist inferred from filename — verify this is the intended mashup arrangement."
   },
   {
     id: "back-on-the-chain-gang",
@@ -794,8 +775,7 @@ window.SONGS = [
     key: "D",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Back On the Chain Gang - Pretenders.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Back On the Chain Gang - Pretenders.pdf"
   },
   {
     id: "all-that-you-dream",
@@ -804,8 +784,7 @@ window.SONGS = [
     key: "G",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/All That You Dream.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/All That You Dream.pdf"
   },
   {
     id: "insider",
@@ -814,8 +793,7 @@ window.SONGS = [
     key: "A",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Insider - Tom Petty & the Heartbreakers & Stevie Nicks.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Insider - Tom Petty & the Heartbreakers & Stevie Nicks.pdf"
   },
   {
     id: "exs-and-ohs",
@@ -824,18 +802,16 @@ window.SONGS = [
     key: "Em",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Ex's & Oh's - Elle King.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Ex's & Oh's - Elle King.pdf"
   },
   {
     id: "higher-love",
     title: "Higher Love",
     artist: "Steve Winwood",
-    key: "C",
+    key: "G",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Higher Love - Steve Winwood.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Higher Love - Steve Winwood.pdf"
   },
   {
     id: "just-the-two-of-us",
@@ -844,8 +820,7 @@ window.SONGS = [
     key: "E♭",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Just the Two of Us - Bill Withers.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Just the Two of Us - Bill Withers.pdf"
   },
   {
     id: "everybody-wants-to-rule-the-world",
@@ -855,7 +830,7 @@ window.SONGS = [
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/Everybody Wants to Rule the World - D.pdf",
-    notes: "Source filename was truncated (\"- D.pdf\") — artist inferred, please verify. Key inferred from chart, unconfirmed."
+    notes: "Source filename was truncated (\"- D.pdf\") — artist inferred, please verify."
   },
   {
     id: "love-letter",
@@ -864,8 +839,7 @@ window.SONGS = [
     key: "D",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Love Letter - Bonnie Raitt.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Love Letter - Bonnie Raitt.pdf"
   },
   {
     id: "tainted-love",
@@ -874,8 +848,7 @@ window.SONGS = [
     key: "Gm",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Tainted Love - Soft Cell.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Tainted Love - Soft Cell.pdf"
   },
   {
     id: "angel-from-montgomery",
@@ -884,8 +857,7 @@ window.SONGS = [
     key: "E",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Angel from Montgomery - John Prine.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Angel from Montgomery - John Prine.pdf"
   },
   {
     id: "something-to-talk-about",
@@ -894,8 +866,7 @@ window.SONGS = [
     key: "A♭",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Something to Talk About - Bonnie Raitt.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Something to Talk About - Bonnie Raitt.pdf"
   },
   {
     id: "walk-on-the-ocean",
@@ -904,8 +875,7 @@ window.SONGS = [
     key: "B",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Walk On the Ocean - Toad the Wet Sprocket.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Walk On the Ocean - Toad the Wet Sprocket.pdf"
   },
   {
     id: "i-believe-im-in-love-with-you",
@@ -914,8 +884,7 @@ window.SONGS = [
     key: "C",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/I Believe I'm In Love With You - Bonnie Raitt.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/I Believe I'm In Love With You - Bonnie Raitt.pdf"
   },
   {
     id: "you-can-leave-your-hat-on",
@@ -925,7 +894,7 @@ window.SONGS = [
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/You Can Leave Your Hat On.pdf",
-    notes: "Artist not printed on chart, filled in from common knowledge — please verify. Key inferred from chart, unconfirmed."
+    notes: "Artist not printed on chart, filled in from common knowledge — please verify."
   },
   {
     id: "rock-this-town",
@@ -934,8 +903,7 @@ window.SONGS = [
     key: "D",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Rock This Town - Stray Cats.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/Rock This Town - Stray Cats.pdf"
   },
 
   /* --- Added for the Nov 28 Hook'd setlist; no chart or audio yet --- */
