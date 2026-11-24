@@ -467,7 +467,6 @@ window.SONGS = [
     tempo: 130,
     original: "audio/source/Bachman Turner Overdrive-Taking care of business.mkv",
     chartPdf: "charts-pdf/taking-care-of-business-bachman-turner-overdrive-chart.pdf",
-    notes: "Key assumed from the original recording, unconfirmed.",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJYlZnT-TGmHpSikYKqZZBw/Bachman%20Turner%20Overdrive-Taking%20care%20of%20business/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AG4L7Vg2vIJ8cbDJhdPrcZg/Bachman%20Turner%20Overdrive-Taking%20care%20of%20business/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
