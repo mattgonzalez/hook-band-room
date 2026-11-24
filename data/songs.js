@@ -485,7 +485,6 @@ window.SONGS = [
     tempo: 80,
     original: "audio/source/Drops of Jupiter.m4a",
     chartPdf: "charts-pdf/drops-of-jupiter-train-chart.pdf",
-    notes: "Key inferred from chart, unconfirmed.",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKLtLGKlXOSljAT19y5KxJ4/Drops%20of%20Jupiter/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ADkYLhwTD9T-nTUbebc-V5w/Drops%20of%20Jupiter/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
@@ -502,7 +501,6 @@ window.SONGS = [
     key: "Am",
     original: "audio/source/How It Is.m4a",
     chartPdf: "charts-pdf/how-it-is-walk-off-the-earth-chart.pdf",
-    notes: "Key inferred from chart, unconfirmed.",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AEMr5OCgSlrO4VRja5NqPko/How%20It%20Is/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AGAtFhNISZ5nCqNZxRD1H30/How%20It%20Is/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
@@ -536,7 +534,6 @@ window.SONGS = [
     key: "F♯m",
     original: "audio/source/Time.m4a",
     chartPdf: "charts-pdf/time-pink-floyd-chart.pdf",
-    notes: "Key inferred from chart, unconfirmed.",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AB6a4RbepIBVZ1x0vKKIC18/Time/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAehr03gcd7BTBUdKu_xH-k/Time/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
@@ -554,7 +551,6 @@ window.SONGS = [
     tempo: 104,
     original: "audio/source/Tubthumping.m4a",
     chartPdf: "charts-pdf/tubthumping-chumbawumba-chart.pdf",
-    notes: "Key inferred from chart, unconfirmed.",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ANuoohelXLnWzwNeNtQb1mw/Tubthumping/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AHt1E_me4BEIOxBS7r5rZio/Tubthumping/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
@@ -572,7 +568,7 @@ window.SONGS = [
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/people-get-ready-jeff-beck-chart.pdf",
-    notes: "Key inferred from chart (final verse modulates up to E♭), unconfirmed."
+    notes: "Final verse modulates up to E♭."
   },
   {
     id: "while-my-guitar-gently-weeps",
@@ -581,8 +577,7 @@ window.SONGS = [
     key: "Am",
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/while-my-guitar-gently-weeps-the-beatles-chart.pdf",
-    notes: "Key inferred from chart, unconfirmed."
+    chartPdf: "charts-pdf/while-my-guitar-gently-weeps-the-beatles-chart.pdf"
   },
 
   /* --- Imported charts, not yet assigned to a set --- */
