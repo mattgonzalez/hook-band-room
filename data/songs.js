@@ -572,7 +572,7 @@ window.SONGS = [
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/people-get-ready-jeff-beck-chart.pdf",
-    notes: "Key inferred from chart (final verse modulates up to E), unconfirmed."
+    notes: "Key inferred from chart (final verse modulates up to E♭), unconfirmed."
   },
   {
     id: "while-my-guitar-gently-weeps",
