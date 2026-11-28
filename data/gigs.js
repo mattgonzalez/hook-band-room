@@ -216,40 +216,39 @@ window.GIGS = [
       {
         name: "Set 1",
         songs: [
+          "goin-down",
+          "tubthumping",
           "down-under",
           "lovely-day",
-          "drops-of-jupiter",
-          "aint-no-sunshine",
-          "rocket-man",
+          "use-me",
           "colors",
-          "keep-your-hands-to-yourself",
-          "come-together"
+          "eleanor-rigby",
+          "drops-of-jupiter"
         ]
       },
       {
         name: "Set 2",
         songs: [
-          "goin-down",
-          "use-me",
-          "time",
+          "superstition",
+          "gidget",
+          "how-it-is",
+          "miss-you",
           "wicked-game",
-          "while-my-guitar-gently-weeps",
-          "people-get-ready",
-          "eleanor-rigby",
-          "lights"
+          "rocket-man",
+          "rock-this-town"
         ]
       },
       {
         name: "Set 3",
         songs: [
           "taking-care-of-business",
-          "how-it-is",
-          "rolling-in-the-deep",
-          "miss-you",
-          "superstition",
-          "gidget",
-          "rock-this-town",
-          "tubthumping"
+          "keep-your-hands-to-yourself",
+          "time",
+          "wish-you-were-here",
+          "aint-no-sunshine",
+          "lights",
+          "while-my-guitar-gently-weeps",
+          "come-together"
         ]
       }
     ]
