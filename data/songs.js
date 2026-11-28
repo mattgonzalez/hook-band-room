@@ -938,6 +938,14 @@ window.SONGS = [
     artist: "Stray Cats",
     key: "D",
     tempo: 100,
+    stems: {
+      vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AIymFqD0eAgC_rQ6y9ocO68/Rock%20This%20Town/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AE4fH3dvkiFbZGv3wRN7VHo/Rock%20This%20Town/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AM2Ypts_hlNWcHBxoBauJMc/Rock%20This%20Town/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AOQOYmdS_RekZ0kgzgxpI9E/Rock%20This%20Town/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ABQgL66QnMjgdbo3IPtmJRs/Rock%20This%20Town/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ACz2VuCp6fbXoPShMU566MQ/Rock%20This%20Town/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    },
     drumBass: null,
     noDrums: null,
     chartPdf: "charts-pdf/rock this town official.pdf"
