@@ -561,7 +561,9 @@ window.SONGS = [
     key: "F♯m",
     tempo: 123,
     original: "audio/source/Time.m4a",
+    chordsheet: "https://www.chordsheet.com/song/462940",
     chartPdf: "charts-pdf/time-pink-floyd-chart.pdf",
+    notes: "Chords-only chart; bar counts checked against the bass stem of the album version. Same chart is in charts-chordsheet/time-pink-floyd.txt for pasting into chordsheet.com.",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AB6a4RbepIBVZ1x0vKKIC18/Time/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       drums:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAehr03gcd7BTBUdKu_xH-k/Time/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
