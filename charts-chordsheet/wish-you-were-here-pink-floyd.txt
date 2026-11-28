@@ -1,34 +1,26 @@
-{c: G, about 60 bpm, 4/4. Chords and section cues only. Bar counts are best guesses from the album version.}
+{c: G, about 60 bpm, 4/4. Chords and section cues only. Form checked against the practice-track stems; bar counts inside each pass are best guesses.}
 
 [Intro]
-{c: 12-string riff (radio sound on the record), then acoustic lead over the same changes, 2x}
+{c: 12-string riff (radio sound on the record). 1x on the practice track; the album plays it 2x, the second time with acoustic lead}
 Em7 | G | Em7 | G
 Em7 | A7sus4 | Em7 | A7sus4 | G | G
 
 [Verse 1]
-C | D/F# | Am/E | G
-D/F# | C | Am | G
-
-[Interlude]
-{c: riff changes, no solo}
-Em7 | G | Em7 | G
-Em7 | A7sus4 | Em7 | A7sus4 | G | G
-
-[Verse 2]
+{c: 2x straight through, no break: "So, so you think..." then "Did they get you to trade...". Bass comes in the second time}
 C | D/F# | Am/E | G
 D/F# | C | Am | G
 
 [Solo]
-{c: acoustic lead over the riff changes, 2x}
+{c: acoustic lead over the riff changes, 1x}
 Em7 | G | Em7 | G
 Em7 | A7sus4 | Em7 | A7sus4 | G | G
 
-[Verse 3]
-{c: same changes, 2x}
+[Verse 2]
+{c: "How I wish, how I wish you were here...", 1x}
 C | D/F# | Am/E | G
 D/F# | C | Am | G
 
 [Outro]
-{c: lead + wordless vocal over the riff changes, repeat and fade or end on G}
+{c: lead + wordless vocal over the riff changes, 2x, then fade or end on G}
 Em7 | G | Em7 | G
 Em7 | A7sus4 | Em7 | A7sus4 | G | G

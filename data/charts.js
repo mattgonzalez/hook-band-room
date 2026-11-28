@@ -23,32 +23,50 @@
    ============================================================ */
 window.CHARTS = {
 
-  "aint-no-sunshine": `[Intro]
-Am   Em G   Am
+  "aint-no-sunshine": `{c: Am, about 79 bpm. Same arrangement as the PDF chart. Each verse line is one lyric line.}
 
 [Verse 1]
-Am          Em G      Am
-(lyrics)
-Am          Em G      Am
-(lyrics)
-Em                         Dm
-(lyrics)
-             Am    Em G   Am
-(lyrics)
-
-[Bridge]
-{c: "I know, I know..." — vamp on Am, 13x, land on Em G}
-Am (vamp)
+{c: pickup "Ain't no sunshine when she's..." over Am}
+Am  Am/E  Am/G  Am
+Am  Am/E  Am/G  Am
+Em  Dm
+Am  Am/E  Am/G  Am
 
 [Verse 2]
-Am          Em G      Am
-(lyrics)
-Em                         Dm
-(lyrics)
-             Am    Em G   Am
-(lyrics)
+{c: "Wonder this time where she's gone...", strings come in}
+Am  Am/E  Am/G  Am
+Am  Am/E  Am/G  Am
+Em  Dm
+Am  Am/E  Am/G  Am
 
-{c: Ends cold on Am}`,
+[I Know]
+{c: percussion only under "I know, I know..." then "Hey, I oughta leave the young thing alone"}
+
+[Verse 3]
+{c: "Only darkness every day..."}
+Am  Am/E  Am/G  Am
+Am  Am/E  Am/G  Am
+Em  Dm
+Am  Am/E  Am/G  Am
+
+[Solo]
+{c: over the verse changes, 2x}
+Am  Am/E  Am/G  Am
+Am  Am/E  Am/G  Am
+Em  Dm
+Am  Am/E  Am/G  Am
+
+[Verse 1 reprise]
+{c: quiet}
+Am  Am/E  Am/G  Am
+Am  Am/E  Am/G  Am
+Em  Dm
+Am  Am/E  Am/G  Am
+
+[Tag]
+{c: "Anytime she goes away" 2 more times, end on Am}
+Am  Am/E  Am/G  Am
+Am  Am/E  Am/G  Am`,
 
   "time": `{c: F#m, 123 bpm felt in half time: each slot is one half-time bar (2 bars at 123). Chords and section cues only. Bar counts checked against the bass stem of the album version.}
 
@@ -135,38 +153,30 @@ Am7 | Am7 | Dm7 | Dm7
 {c: "ooh ooh" + harmonica vamp, cue the end, land on Am7}
 Am7 | Am7 | Dm7 | Dm7`,
 
-  "wish-you-were-here": `{c: G, about 60 bpm, 4/4. Chords and section cues only. Bar counts are best guesses from the album version.}
+  "wish-you-were-here": `{c: G, about 60 bpm, 4/4. Chords and section cues only. Form checked against the practice-track stems; bar counts inside each pass are best guesses.}
 
 [Intro]
-{c: 12-string riff (radio sound on the record), then acoustic lead over the same changes, 2x}
+{c: 12-string riff (radio sound on the record). 1x on the practice track; the album plays it 2x, the second time with acoustic lead}
 Em7 | G | Em7 | G
 Em7 | A7sus4 | Em7 | A7sus4 | G | G
 
 [Verse 1]
-C | D/F# | Am/E | G
-D/F# | C | Am | G
-
-[Interlude]
-{c: riff changes, no solo}
-Em7 | G | Em7 | G
-Em7 | A7sus4 | Em7 | A7sus4 | G | G
-
-[Verse 2]
+{c: 2x straight through, no break: "So, so you think..." then "Did they get you to trade...". Bass comes in the second time}
 C | D/F# | Am/E | G
 D/F# | C | Am | G
 
 [Solo]
-{c: acoustic lead over the riff changes, 2x}
+{c: acoustic lead over the riff changes, 1x}
 Em7 | G | Em7 | G
 Em7 | A7sus4 | Em7 | A7sus4 | G | G
 
-[Verse 3]
-{c: same changes, 2x}
+[Verse 2]
+{c: "How I wish, how I wish you were here...", 1x}
 C | D/F# | Am/E | G
 D/F# | C | Am | G
 
 [Outro]
-{c: lead + wordless vocal over the riff changes, repeat and fade or end on G}
+{c: lead + wordless vocal over the riff changes, 2x, then fade or end on G}
 Em7 | G | Em7 | G
 Em7 | A7sus4 | Em7 | A7sus4 | G | G`
 
