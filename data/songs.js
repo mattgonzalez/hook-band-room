@@ -324,7 +324,15 @@ window.SONGS = [
     tempo: 69,
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/lights-journey-chart.pdf"
+    chartPdf: "charts-pdf/lights-journey-chart.pdf",
+    stems: {
+      vocals:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ACpdPxAfh1wN5JXeJY6uAnM/Lights/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AD_7bytwiZGSpBPiAKs5qKI/Lights/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKFTeVTtI3rEM6RxaLxcQ_I/Lights/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJgHOLl97fX-mCjArEwtG7w/Lights/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AP9_o0RYfK2lLWfsufbetho/Lights/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFhaJE2T2vTkstXp-a66zJw/Lights/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "lovin-touchin-squeezin",
@@ -362,7 +370,15 @@ window.SONGS = [
     tempo: 82,
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/come-together-beatles-chart.pdf"
+    chartPdf: "charts-pdf/come-together-beatles-chart.pdf",
+    stems: {
+      vocals:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/APPbpLql1CQzl32AdD2FFH0/Come%20Together/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AAnRCxmmZl6QKqoDzzr2618/Come%20Together/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AOJNPdy2gylTzIMbgPLHL3k/Come%20Together/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AO993VWGzJpvA6bY40_LBAE/Come%20Together/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALAC4_trXKEjKQAEeFaChVc/Come%20Together/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AHpeiwkV8917KR9wcJBoWME/Come%20Together/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
 
   /* --- Set 3 --- */
