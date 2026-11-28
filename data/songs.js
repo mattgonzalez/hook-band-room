@@ -1055,6 +1055,14 @@ window.SONGS = [
     artist: "Pink Floyd",
     key: "G",
     tempo: 60,
-    notes: "Chords-only chart; bar counts are best guesses from the album version. Same chart is in charts-chordsheet/wish-you-were-here-pink-floyd.txt for pasting into chordsheet.com."
+    notes: "Chords-only chart; bar counts are best guesses from the album version. Same chart is in charts-chordsheet/wish-you-were-here-pink-floyd.txt for pasting into chordsheet.com.",
+    stems: {
+      vocals:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ALrRR3L5Qka4lNMY5stxbW8/Wish%20You%20Were%20Here/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJ3_j6tjG35WMc_Pq5r-qv0/Wish%20You%20Were%20Here/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFQ3Kwe5FUt0rjKoqioV2AU/Wish%20You%20Were%20Here/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AD9vrXfpVubqE3xG9XAlqHY/Wish%20You%20Were%20Here/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFYSE-17Hu_l4Mq7EDfi__Y/Wish%20You%20Were%20Here/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AJUdapdWl0pNPE8jGXuIUgU/Wish%20You%20Were%20Here/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   }
 ];
