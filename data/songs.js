@@ -304,7 +304,15 @@ window.SONGS = [
     tempo: 79,
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Ain't No Sunshine - Bill Withers.pdf"
+    chartPdf: "charts-pdf/Ain't No Sunshine - Bill Withers.pdf",
+    stems: {
+      vocals:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ABDsmfh1UPh47qC2atLLrmY/Ain%27t%20No%20Sunshine/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AANNoXIMyZMp9zSTQa9o1s4/Ain%27t%20No%20Sunshine/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      bass:    "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AIWzfOQAZdSvRwxyvzReXUk/Ain%27t%20No%20Sunshine/bass.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      guitar:  "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AH9GOa7pDlg5w6mLNz-NK80/Ain%27t%20No%20Sunshine/guitar.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      piano:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/ABv-V1Y0EGMr0X9btPpz5lA/Ain%27t%20No%20Sunshine/piano.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
+      other:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFJ6iUx_pBup9-NGHOQ2wlE/Ain%27t%20No%20Sunshine/other.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1"
+    }
   },
   {
     id: "hello",
