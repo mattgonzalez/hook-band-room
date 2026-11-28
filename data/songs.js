@@ -938,7 +938,7 @@ window.SONGS = [
     tempo: 100,
     drumBass: null,
     noDrums: null,
-    chartPdf: "charts-pdf/Rock This Town - Stray Cats.pdf"
+    chartPdf: "charts-pdf/rock this town official.pdf"
   },
 
   /* --- Added for the Nov 28 Hook'd setlist; no chart or audio yet --- */
