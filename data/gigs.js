@@ -235,7 +235,7 @@ window.GIGS = [
           "miss-you",
           "wicked-game",
           "rocket-man",
-          "rock-this-town"
+          "hook"
         ]
       },
       {
@@ -248,7 +248,7 @@ window.GIGS = [
           "aint-no-sunshine",
           "lights",
           "while-my-guitar-gently-weeps",
-          "come-together"
+          "i-will-survive"
         ]
       }
     ]
