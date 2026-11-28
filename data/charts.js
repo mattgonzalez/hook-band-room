@@ -50,6 +50,45 @@ Em                         Dm
 
 {c: Ends cold on Am}`,
 
+  "time": `{c: F#m, 123 bpm felt in half time: each slot is one half-time bar (2 bars at 123). Chords and section cues only. Bar counts checked against the bass stem of the album version.}
+
+[Intro]
+{c: after the clocks: rototoms over bass E / F#, 4x}
+E | E | F#m | F#m
+{c: band in, then straight into Verse 1}
+F#m | F#m | A | A | E | E | F#m | F#m
+
+[Verse 1]
+{c: 2x}
+F#m | A | E | F#m
+
+[Chorus]
+D | Amaj7 | D | Amaj7
+D | A/C# | Bm | E
+
+[Solo]
+{c: guitar solo over the verse changes, 4x}
+F#m | A | E | F#m
+{c: then the chorus changes once}
+D | Amaj7 | D | Amaj7
+D | A/C# | Bm | E
+
+[Verse 2]
+{c: 2x}
+F#m | A | E | F#m
+
+[Chorus]
+{c: last bar changes: hold Bm 2 bars, no E, straight into the tag}
+D | Amaj7 | D | Amaj7
+D | A/C# | Bm | Bm
+
+[Tag]
+{c: Breathe reprise, 2x}
+Em | A7 | Em | A7
+Cmaj7 | Cmaj7 | Bm7 | Bm7
+Fmaj7 | Fmaj7 | G D7#9
+D7b9 Bm`,
+
   "miss-you": `{c: Am, about 110 bpm. Main groove: 2 bars Am7, 2 bars Dm7. Bar counts are best guesses.}
 
 [Intro]
