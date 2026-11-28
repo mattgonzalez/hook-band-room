@@ -1030,7 +1030,9 @@ window.SONGS = [
     id: "gidget",
     title: "Gidget",
     artist: "Free Nationals",
-    notes: "Added for the Nov 28 setlist. Key and chart still to come.",
+    key: "Gm",
+    notes: "Added for the Nov 28 setlist. Chart is the PDF above (Gm7 / Fmaj7 / Dbmaj7 / Dm7 G7; bridge Am7 Dm7 Gm7 / Fmaj7 Ebmaj7).",
+    chartPdf: "charts-pdf/gidget chords.pdf",
     stems: {
       vocals: "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AKn8DhlZtgfol2vjCvwTvgg/Gidget/vocals.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
       drums:   "https://dl.dropboxusercontent.com/scl/fo/0waan84y9e3bucvp5b8wn/AFh3t-ALBjvbN9ON3kzzTh4/Gidget/drums.m4a?rlkey=mk5mu1nd86p94788qv7wiyaw3&dl=1",
